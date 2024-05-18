@@ -24,4 +24,5 @@ jobs:
           apt-get update
           apt-get install -y python3-catkin-tools
           cd $GITHUB_WORKSPACE
+          ls
           catkin build
