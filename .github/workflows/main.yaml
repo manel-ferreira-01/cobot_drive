@@ -22,4 +22,4 @@ jobs:
           source /opt/ros/noetic/setup.bash
           apt-get update
           apt-get install -y python3-catkin-tools
-          ls /github/workspace
+          ls /github/workflow
