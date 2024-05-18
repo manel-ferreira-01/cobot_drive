@@ -1,0 +1,19 @@
+name: check-compile
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ros:noetic-ros-base
+
+    steps:
+      - name: Build workspace
+        run: |
+          source /opt/ros/noetic/setup.bash
+          catkin build
