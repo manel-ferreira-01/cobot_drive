@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Run noetic container
         run: |
-         docker run --name cobot_pipeline -it --network=host ros:noetic-ros-core 
+         docker run --name cobot_pipeline --network=host ros:noetic-ros-core 
 
       - name: Build pipeline
         run: docker exec cobot_pipeline bash -c "source /opt/ros/noetic/setup.bash && catkin_make"
