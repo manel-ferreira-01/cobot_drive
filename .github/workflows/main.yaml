@@ -22,7 +22,7 @@ jobs:
         run: |
           source /opt/ros/noetic/setup.bash
           apt-get update
-          apt-get install -y python3-catkin-tools build-essential libeigen3-dev
+          apt-get install -y python3-catkin-tools build-essential libeigen3-dev ros-noetic-tf2
           cd $GITHUB_WORKSPACE
           ls
           catkin build
