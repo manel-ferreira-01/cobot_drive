@@ -22,74 +22,79 @@
 #include <iostream>
 #include <stdio.h>
 #include "drive.h"
-#include "terminal_utils.h"
-#include "proghelp.h"
+//#include "terminal_utils.h"
+//#include "proghelp.h"
 #include "sys/time.h"
 #include <ros/ros.h>
-#include "cobot_msgs/CobotDriveMsg.h"
-#include "cobot_msgs/CobotDriveRawMsg.h"
-#include "cobot_msgs/CobotOdometryMsg.h"
-#include "popt_pp.h"
+//#include "cobot_msgs/CobotDriveMsg.h"
+//#include "cobot_msgs/CobotDriveRawMsg.h"
+//#include "cobot_msgs/CobotOdometryMsg.h"
+//#include "popt_pp.h"
 #include <tf/transform_broadcaster.h>
 #include <nav_msgs/Odometry.h>
-using namespace cobot_msgs;
+#include "std_msgs/Int32.h"
+#include "geometry_msgs/TwistStamped.h"
+#include "messages/CobotRawStatus.h"
+
+// using namespace cobot_msgs;
+
+#define RAD(deg) ((deg) * M_PI / 180.0)
+
 
 bool run = true;
 CobotDrive* cobotDrive;
-ros::Publisher cobotOdometryPublisher;
-ros::Publisher odometryPublisher;
-ros::Publisher cobotDriveRawPublisher;
 tf::TransformBroadcaster *tfBroadcaster;
 
-void cobotDriveCallback(const CobotDriveMsgConstPtr& msg) {
-  cobotDrive->setSpeeds(msg->velocity_x, msg->velocity_y, msg->velocity_r);
+void cobotDriveCallback(const geometry_msgs::TwistStampedPtr& msg) {
+  cobotDrive->setSpeeds(msg->twist.linear.x, msg->twist.linear.y, msg->twist.angular.z);
 }
 
 void timerEvent( int sig ) {
   const bool debugTimer = false;
-  static double tLast = GetTimeSec();
-  static double tLastOdometry = GetTimeSec();
+  const ros::Time tNow = ros::Time::now();
+  static double tLast = tNow.toSec();
+  static double tLastOdometry = tNow.toSec();
   if(debugTimer){
-    printf( "dT = %f\n", GetTimeSec()-tLast );
-    tLast = GetTimeSec();
+    printf( "dT = %f\n", tNow.toSec()-tLast );
+    tLast = tNow.toSec();
   }
   cobotDrive->run();
 
-  const ros::Time tNow = ros::Time::now();
   //Get raw drive message
   double vxRaw,vyRaw,vrRaw;
   cobotDrive->GetDriveRawFeedback(vxRaw,vyRaw,vrRaw);
-  CobotDriveRawMsg cobotDriveRawMsg;
-  cobotDriveRawMsg.vx = vxRaw;
-  cobotDriveRawMsg.vy = vyRaw;
-  cobotDriveRawMsg.vr = vrRaw;
+  geometry_msgs::TwistStamped cobotDriveRawMsg;
+  cobotDriveRawMsg.twist.linear.x = vxRaw;
+  cobotDriveRawMsg.twist.linear.y = vyRaw;
+  cobotDriveRawMsg.twist.angular.z = vrRaw;
   cobotDriveRawMsg.header.seq++;
   cobotDriveRawMsg.header.stamp = tNow;
   cobotDriveRawMsg.header.frame_id = "drive";
   cobotDriveRawPublisher.publish(cobotDriveRawMsg);
 
-  //Get odometry message
+  //Get odometry messageicad
   double dr,dx,dy,v0,v1,v2,v3,vr,vx,vy,adc,curAngle;
   unsigned char status;
   vector2d curLoc;
   if(cobotDrive->GetFeedback(dr,dx,dy,v0,v1,v2,v3,vr,vx,vy,adc,status,curLoc,curAngle)){
     CobotOdometryMsg cobotOdometryMsg;
-    cobotOdometryMsg.dr = dr;
-    cobotOdometryMsg.dx = dx;
-    cobotOdometryMsg.dy = dy;
-    cobotOdometryMsg.v0 = v0;
-    cobotOdometryMsg.v1 = v1;
-    cobotOdometryMsg.v2 = v2;
-    cobotOdometryMsg.v3 = v3;
-    cobotOdometryMsg.vr = vr;
-    cobotOdometryMsg.vx = vx;
-    cobotOdometryMsg.vy = vy;
-    cobotOdometryMsg.VBatt = adc;
-    cobotOdometryMsg.status = status;
+    //cobotOdometryMsg.dr = dr;
+    //cobotOdometryMsg.dx = dx;
+    //cobotOdometryMsg.dy = dy;
+    //cobotOdometryMsg.v0 = v0;
+    //cobotOdometryMsg.v1 = v1;
+    //cobotOdometryMsg.v2 = v2;
+    //cobotOdometryMsg.v3 = v3;
+    //cobotOdometryMsg.vr = vr;
+    //cobotOdometryMsg.vx = vx;
+    //cobotOdometryMsg.vy = vy;
+    //cobotOdometryMsg.VBatt = adc;
+    //cobotOdometryMsg.status = status;
 
-    cobotOdometryMsg.header.seq++;
-    cobotOdometryMsg.header.stamp = tNow;
-    cobotOdometryMsg.header.frame_id = "odom";
+//
+    //cobotOdometryMsg.header.seq++;
+    //cobotOdometryMsg.header.stamp = tNow;
+    //cobotOdometryMsg.header.frame_id = "odom";
 
 
     static nav_msgs::Odometry odometryMsg;
@@ -97,8 +102,8 @@ void timerEvent( int sig ) {
     odometryMsg.header.seq ++;
     odometryMsg.header.stamp = ros::Time::now();
     odometryMsg.child_frame_id = "base_footprint";
-    odometryMsg.pose.pose.position.x = curLoc.x;
-    odometryMsg.pose.pose.position.y = curLoc.y;
+    odometryMsg.pose.pose.position.x = curLoc[0];
+    odometryMsg.pose.pose.position.y = curLoc[1];
     odometryMsg.pose.pose.position.z = 0;
     odometryMsg.pose.pose.orientation.w = cos(curAngle*0.5);
     odometryMsg.pose.pose.orientation.x = 0;
@@ -115,13 +120,13 @@ void timerEvent( int sig ) {
     tLastOdometry = GetTimeSec();
     static const double MaxTransSpeed = 3.0;
     static const double MaxRotSpeed = 360.0;
-    if((sq(dx)+sq(dy))>sq(MaxTransSpeed/dT) || fabs(dr)>RAD(MaxRotSpeed/dT)){
-      TerminalWarning("Odometry out of bounds! Dropping odometry packet.");
+    if((std::pow(dx,2)+std::pow(dy,2))>std::pow(MaxTransSpeed/dT , 2) || fabs(dr)>RAD(MaxRotSpeed/dT)){
+      std::cout << ("Odometry out of bounds! Dropping odometry packet.") << std::endl;
     }else{
-      cobotOdometryPublisher.publish(cobotOdometryMsg);
+      cobotRawStatusPublisher.publish(cobotOdometryMsg);
 
       tf::Transform transform;
-      transform.setOrigin(tf::Vector3(curLoc.x,curLoc.y, 0.0));
+      transform.setOrigin(tf::Vector3(curLoc[0],curLoc[1], 0.0));
       transform.setRotation(tf::Quaternion(tf::Vector3(1,0,0),curAngle));
       tfBroadcaster->sendTransform(
           tf::StampedTransform(transform, ros::Time::now(),
@@ -174,6 +179,7 @@ int main(int argc, char **argv) {
   sprintf(serialPort,"/dev/ttyUSB%d",portNum);
   if(debug) printf("Using port %s\n",serialPort);
 
+
   InitHandleStop(&run);
   AccelLimits transLimits, rotLimits;
   transLimits.set(1.0,2.0,2.5);
@@ -190,9 +196,8 @@ int main(int argc, char **argv) {
   ros::init(argc, argv, "Cobot2_Drive_Module");
   ros::NodeHandle n;
   ros::Subscriber drive_sub = n.subscribe("Cobot/Drive", 1, cobotDriveCallback);
-  cobotOdometryPublisher = n.advertise<CobotOdometryMsg>("Cobot/Odometry",1);
-  odometryPublisher = n.advertise<nav_msgs::Odometry>("odom",1);
-  cobotDriveRawPublisher = n.advertise<CobotDriveRawMsg>("Cobot/DriveRaw",1);
+  ros::Publisher cobotRawStatusPublisher = n.advertise<nav_msgs::Odometry>("Cobot/RawStatus",1);
+  ros::Publisher cobotDriveRawPublisher = n.advertise<geometry_msgs::TwistStamped>("Cobot/DriveRaw",1);
   tfBroadcaster = new tf::TransformBroadcaster();
 
   // main loop

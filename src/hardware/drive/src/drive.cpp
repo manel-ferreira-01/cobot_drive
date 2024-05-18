@@ -23,9 +23,12 @@
 
 #include <cmath>
 
-#include "shared/util/helpers.h"
+// #include "shared/util/helpers.h"
 
 using std::isfinite;
+
+#define RAD(deg) ((deg) * M_PI / 180.0)
+
 
 AccelLimits &AccelLimits::operator*=(double f) {
   max_accel  *= f;
@@ -56,8 +59,8 @@ CobotDrive::CobotDrive(motor_properties_t _motorProps) {
 
   //Drive commands
   lastSerialSendT = 0.0;
-  lastTransSpeed.zero();
-  desiredTransSpeed.zero();
+  lastTransSpeed.setZero();
+  desiredTransSpeed.setZero();
   lastRotSpeed = 0.0;
   desiredRotSpeed = 0.0;
   enableMotion = true;
@@ -67,7 +70,7 @@ CobotDrive::CobotDrive(motor_properties_t _motorProps) {
   v0 = v1 = v2 = v3 = 0.0;
   currentRSpeed = currentXSpeed = currentYSpeed = 0.0;
   newOdometryAvailable = false;
-  curLoc.zero();
+  curLoc.setZero();
 }
 
 void CobotDrive::setLimits(AccelLimits _transLimits, AccelLimits _rotLimits) {
@@ -87,14 +90,14 @@ void CobotDrive::setSpeeds(float x, float y, float r) {
   static const double maxTransSpeed = 3.5;
   static const double maxRotSpeed = RAD(360.0);
   if (!isfinite(x) || !isfinite(y) || !isfinite(r) ||
-      (sq(x)+sq(y)>sq(maxTransSpeed)) || fabs(r)>maxRotSpeed) {
+      ( std::pow(x,2) + std::pow(y,2) > std::pow(maxTransSpeed,2) ) || fabs(r)>maxRotSpeed) {
     char text[1024];
     sprintf(text,"Invalid command: %f %f %f\n",x,y,r);
-    TerminalWarning(text);
+    //TerminalWarning(text);
     x = y = r = 0;
   }
-  lastCommandT = GetTimeSec();
-  desiredTransSpeed.set(x,y);
+  lastCommandT = clock();
+  desiredTransSpeed << x, y;
   desiredRotSpeed = r;
 }
 
@@ -132,8 +135,10 @@ void CobotDrive::EncoderUpdate(
   double  e0diff=0, e1diff=0, e2diff=0, e3diff=0;
   double tdiff=0;
 
+  //printf("EncoderUpdate");
+
   //Override t, use current time instead
-  t = GetTimeSec();
+  t = clock();
 
   if (tlast<DBL_MIN) {
     //This is the first time the function is being called, can't estimate velocities right now
@@ -156,17 +161,23 @@ void CobotDrive::EncoderUpdate(
     return;
   }
 
-  double x = (e0diff+e1diff-e2diff-e3diff)/(4.0*motorProps.encoderCountsPerMeter.x);
-  double y = (e0diff-e1diff-e2diff+e3diff)/(4.0*motorProps.encoderCountsPerMeter.y);
+  double x = (e0diff+e1diff-e2diff-e3diff)/(4.0*motorProps.encoderCountsPerMeter[0]);
+  double y = (e0diff-e1diff-e2diff+e3diff)/(4.0*motorProps.encoderCountsPerMeter[1]);
   if (motorProps.xyFlipped)
-    swap(x,y);
+    std::swap(x,y);
 
   odometryR = -(e0diff+e1diff+e2diff+e3diff)/(4.0*motorProps.encoderCountsPerRadian);
   odometryX = x;
   odometryY = y;
 
-  curLoc += vector2d(x,y).rotate(curAngle);
-  curAngle = angle_mod(curAngle+odometryR);
+  Eigen::Rotation2D<double> rot(curAngle);
+  vector2d translation; 
+  translation << x,y;
+  curLoc += rot*translation;
+  curAngle = M_2_PI * std::floor((curAngle+odometryR) / M_2_PI);
+  
+  //curLoc += vector2d(x,y).rotate(curAngle);
+  //curAngle = angle_mod(curAngle+odometryR);
 
   v0 = (double) e0diff/tdiff;
   v1 = (double) e1diff/tdiff;
@@ -218,8 +229,8 @@ bool CobotDrive::GetFeedback(
 }
 
 void CobotDrive::GetDriveRawFeedback(double& vx, double& vy, double& vr) {
- vx = transSpeed.x;
- vy = transSpeed.y;
+ vx = transSpeed[0];
+ vy = transSpeed[1];
  vr = rotSpeed;
 }
 
@@ -228,12 +239,13 @@ void CobotDrive::SerialReceive() {
   static const bool debug = false;
   static const bool debug_serial = false;
   static const int bufferSize = ReceiveBufferSize;
-  static double tLast = GetTimeSec();
+  std::clock_t tLast = clock();
   unsigned char buffer[bufferSize+1];
   int i=0;
-  const double t_start = debug_serial ? GetTimeSec() : 0.0;
+  const double t_start = debug_serial ? tLast : 0.0;
   int len = robotSerial.read(buffer,bufferSize);
-  if (debug_serial) {
+
+  /* if (debug_serial) {
     const double t_duration = GetTimeSec() - t_start;
     if (len < 0) {
       std::string str = StringPrintf(
@@ -242,16 +254,17 @@ void CobotDrive::SerialReceive() {
     } else {
       printf("%f (%6.3F): %d\n", GetTimeSec() * 1e6, t_duration, len);
     }
-  }
+  } */
   
 
   if (len>0) {
     //serial data received!
     //Ensure that the string terminates well
-    buffer[min(bufferSize,len+1)]=0;
+    buffer[std::min(bufferSize,len+1)]=0;
+    std::clock_t t = clock();
     if (debug) {
-      printf("Rcv %d bytes (dT=%.3f) \n",len,GetTimeSec()-tLast);
-      tLast = GetTimeSec();
+      printf("Rcv %d bytes (dT=%.3f) \n",len,t-tLast);
+      tLast = t;
     }
     if (buffer[0]=='m' && buffer[1]=='p') {
       if (false && debug) {
@@ -300,34 +313,35 @@ int CobotDrive::makercpacket(mspcommand_t* command, unsigned char* buf) {
 void CobotDrive::SerialSend() {
   static const bool debug = false;
   static const double CommandTimeout = 0.2;
+  std::clock_t t = clock();
   mspcommand_t mspcommand;
 
-  if (GetTimeSec()-lastCommandT > CommandTimeout) {
+  if ( t - lastCommandT > CommandTimeout) {
     if (debug) printf("No command received recently, engage safety halt\n");
     //No command received recently, engage safety halt
-    desiredTransSpeed.zero();
+    desiredTransSpeed.setZero();
     desiredRotSpeed = 0.0;
   }
 
-  double dt = GetTimeSec() - lastSerialSendT;
+  double dt = t - lastSerialSendT;
 
   unsigned char commandBuffer[20];
 
   if (!enableMotion) {
     rotSpeed = 0.0;
-    transSpeed.zero();
+    transSpeed.setZero();
   }else {
     //Abide by limits
-    if (desiredTransSpeed.sqlength()>sq(transLimits.max_vel))
-      desiredTransSpeed = desiredTransSpeed.norm(transLimits.max_vel);
+    if (desiredTransSpeed.squaredNorm() > std::pow(transLimits.max_vel, 2) )
+      desiredTransSpeed = normalize(desiredTransSpeed, transLimits.max_vel);
     double dvMax = 0.0;
-    if (desiredTransSpeed.sqlength()>lastTransSpeed.sqlength())
+    if (desiredTransSpeed.squaredNorm()>lastTransSpeed.squaredNorm())
       dvMax = dt*transLimits.max_accel;
     else
       dvMax = dt*transLimits.max_deccel;
     vector2d dv = desiredTransSpeed - lastTransSpeed;
-    if (dv.sqlength()>sq(dvMax)) {
-      dv = dv.norm(dvMax);
+    if (dv.squaredNorm()>std::pow(dvMax,2)) {
+      dv = normalize(dv, dvMax);
     }
     transSpeed = lastTransSpeed + dv;
 
@@ -342,10 +356,10 @@ void CobotDrive::SerialSend() {
   }
 
   mspcommand.xspeed =
-      bound(-motorProps.transMotionScale.y*transSpeed.y, -30000, 30000);
+      clamp(double(-motorProps.transMotionScale[1]*transSpeed[1]), -30000.0, 30000.0);
   mspcommand.yspeed =
-      bound(motorProps.transMotionScale.x*transSpeed.x, -30000, 30000);
-  mspcommand.rspeed = bound(motorProps.rotMotionScale*rotSpeed, -30000, 30000);
+      clamp(double(motorProps.transMotionScale[0]*transSpeed[0]), -30000.0, 30000.0);
+  mspcommand.rspeed = clamp(motorProps.rotMotionScale*rotSpeed, -30000.0, 30000.0);
   double packetLen = makercpacket(&mspcommand, commandBuffer);
   if (debug) {
     for(int i=0; i<packetLen; i++)
@@ -356,7 +370,7 @@ void CobotDrive::SerialSend() {
 
   lastRotSpeed = rotSpeed;
   lastTransSpeed = transSpeed;
-  lastSerialSendT = GetTimeSec();
+  lastSerialSendT = clock();
 
 }
 
