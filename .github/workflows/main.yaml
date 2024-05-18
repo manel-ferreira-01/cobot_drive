@@ -16,6 +16,7 @@ jobs:
     container:
       image: ros:noetic-ros-core
     steps:
+      - uses: actions/checkout@v2
       - name: build
         shell: bash
         run: |
