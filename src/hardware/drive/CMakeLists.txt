@@ -13,7 +13,6 @@ find_package(catkin REQUIRED
     std_msgs
     geometry_msgs
     message_generation
-    dynamic_reconfigure
     messages
 )
 
