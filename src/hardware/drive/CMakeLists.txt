@@ -14,6 +14,7 @@ find_package(catkin REQUIRED
     geometry_msgs
     message_generation
     dynamic_reconfigure
+    messages
 )
 
 ## System dependencies are found with CMake's conventions
@@ -129,6 +130,7 @@ add_library(${PROJECT_NAME}
   src/serial.cpp
   src/drive.cpp
   src/cobot_drive_main.cpp
+  src/fcs.cpp
 )
 
 ## Add cmake target dependencies of the library
