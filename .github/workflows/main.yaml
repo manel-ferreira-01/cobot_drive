@@ -13,7 +13,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: ros:noetic-ros-core
     steps:
-      - name: Run noetic container
+      - name: build
         run: |
-          ls && docker run --name cobot_pipeline --network=host ros:noetic-ros-core /bin/bash -c "source /opt/ros/noetic/setup.bash && ls"
+          /bin/bash -c "source /opt/ros/noetic/setup.bash && ls"
