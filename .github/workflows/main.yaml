@@ -18,4 +18,7 @@ jobs:
     steps:
       - name: build
         run: |
-          /bin/bash -c "source /opt/ros/noetic/setup.bash && ls"
+          source /opt/ros/noetic/setup.bash
+          apt-get update
+          apt-get install -y python3-catkin-tools
+          catkin build
