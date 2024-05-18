@@ -17,6 +17,7 @@ jobs:
       image: ros:noetic-ros-core
     steps:
       - name: build
+        shell: bash
         run: |
           source /opt/ros/noetic/setup.bash
           apt-get update
