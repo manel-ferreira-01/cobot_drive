@@ -2,8 +2,8 @@ import launch
 import os
 
 import launch_ros.actions
-
-from ament_index_python.packages import get_package_prefix
+from launch_xml.launch_description_sources import XMLLaunchDescriptionSource
+from ament_index_python.packages import get_package_prefix, get_package_share_directory
 
 def generate_launch_description():
     
@@ -22,7 +22,11 @@ def generate_launch_description():
             output='screen',
             parameters=[ os.path.join(workspace_directory, "meta_package","config","params_urg.yaml") ]
         ),
-        # Add more nodes here if needed
+        launch.actions.IncludeLaunchDescription(
+        XMLLaunchDescriptionSource(
+                [os.path.join(
+         get_package_share_directory('rosbridge_server'), 'launch'),
+         '/rosbridge_websocket_launch.xml']))
     ])
 
 if __name__ == '__main__':
