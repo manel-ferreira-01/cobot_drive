@@ -1,0 +1,23 @@
+[0.015s] Invoking command in '/workspace/ros2/build/urg_node': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /workspace/ros2/hardware/urg_node -DCMAKE_INSTALL_PREFIX=/workspace/ros2/install/urg_node
+[0.029s] -- Found ament_cmake: 2.0.5 (/opt/ros/iron/share/ament_cmake/cmake)
+[0.173s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0")  
+[0.180s] [31mCMake Error at CMakeLists.txt:22 (find_package):
+[0.180s]   By not providing "Finddiagnostic_updater.cmake" in CMAKE_MODULE_PATH this
+[0.180s]   project has asked CMake to find a package configuration file provided by
+[0.180s]   "diagnostic_updater", but CMake did not find one.
+[0.180s] 
+[0.180s]   Could not find a package configuration file provided by
+[0.180s]   "diagnostic_updater" with any of the following names:
+[0.181s] 
+[0.181s]     diagnostic_updaterConfig.cmake
+[0.181s]     diagnostic_updater-config.cmake
+[0.181s] 
+[0.181s]   Add the installation prefix of "diagnostic_updater" to CMAKE_PREFIX_PATH or
+[0.181s]   set "diagnostic_updater_DIR" to a directory containing one of the above
+[0.181s]   files.  If "diagnostic_updater" provides a separate development package or
+[0.182s]   SDK, be sure it has been installed.
+[0.182s] 
+[0.182s] [0m
+[0.183s] -- Configuring incomplete, errors occurred!
+[0.183s] See also "/workspace/ros2/build/urg_node/CMakeFiles/CMakeOutput.log".
+[0.183s] Invoked command in '/workspace/ros2/build/urg_node' returned '1': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /workspace/ros2/hardware/urg_node -DCMAKE_INSTALL_PREFIX=/workspace/ros2/install/urg_node

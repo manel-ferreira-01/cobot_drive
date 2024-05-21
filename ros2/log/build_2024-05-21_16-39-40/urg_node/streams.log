@@ -1,0 +1,57 @@
+[0.013s] Invoking command in '/workspace/ros2/build/urg_node': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /workspace/ros2/build/urg_node -- -j8 -l8
+[0.064s] [ 14%] [32mBuilding CXX object CMakeFiles/urg_node_driver.dir/rclcpp_components/node_main_urg_node_driver.cpp.o[0m
+[0.070s] [ 28%] [32mBuilding CXX object CMakeFiles/urg_node.dir/src/urg_c_wrapper.cpp.o[0m
+[0.071s] [ 42%] [32mBuilding CXX object CMakeFiles/urg_node.dir/src/urg_node.cpp.o[0m
+[4.788s] [ 57%] [32m[1mLinking CXX executable urg_node_driver[0m
+[4.977s] [ 57%] Built target urg_node_driver
+[7.701s] [ 71%] [32m[1mLinking CXX shared library liburg_node.so[0m
+[8.143s] [ 71%] Built target urg_node
+[8.171s] [ 85%] [32mBuilding CXX object CMakeFiles/getID.dir/src/get_id.cpp.o[0m
+[11.552s] [100%] [32m[1mLinking CXX executable getID[0m
+[11.835s] [100%] Built target getID
+[11.846s] Invoked command in '/workspace/ros2/build/urg_node' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /workspace/ros2/build/urg_node -- -j8 -l8
+[11.888s] Invoking command in '/workspace/ros2/build/urg_node': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --install /workspace/ros2/build/urg_node
+[11.899s] -- Install configuration: ""
+[11.900s] -- Installing: /workspace/ros2/install/urg_node/lib/urg_node/urg_node_driver
+[11.900s] -- Set runtime path of "/workspace/ros2/install/urg_node/lib/urg_node/urg_node_driver" to ""
+[11.901s] -- Installing: /workspace/ros2/install/urg_node/lib/liburg_node.so
+[11.905s] -- Set runtime path of "/workspace/ros2/install/urg_node/lib/liburg_node.so" to ""
+[11.906s] -- Installing: /workspace/ros2/install/urg_node/lib/urg_node/getID
+[11.906s] -- Set runtime path of "/workspace/ros2/install/urg_node/lib/urg_node/getID" to ""
+[11.906s] -- Installing: /workspace/ros2/install/urg_node/include
+[11.906s] -- Installing: /workspace/ros2/install/urg_node/include/urg_node
+[11.906s] -- Installing: /workspace/ros2/install/urg_node/include/urg_node/urg_node.hpp
+[11.906s] -- Installing: /workspace/ros2/install/urg_node/include/urg_node/urg_c_wrapper.hpp
+[11.907s] -- Installing: /workspace/ros2/install/urg_node/lib/urg_node/set_urg_ip.py
+[11.907s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/launch
+[11.907s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/launch/urg_node_ethernet.yaml
+[11.907s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/launch/urg_node_serial.yaml
+[11.907s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/launch/urg_lidar.launch
+[11.907s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/launch/urg_node_launch.py
+[11.907s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/launch/hokuyo_laser.urdf
+[11.908s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/meshes
+[11.908s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/meshes/hokuyo_ust10.stl
+[11.908s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/urdf
+[11.908s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/urdf/hokuyo_ust10.urdf.xacro
+[11.908s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/environment/library_path.sh
+[11.908s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/environment/library_path.dsv
+[11.909s] -- Installing: /workspace/ros2/install/urg_node/share/ament_index/resource_index/package_run_dependencies/urg_node
+[11.909s] -- Installing: /workspace/ros2/install/urg_node/share/ament_index/resource_index/parent_prefix_path/urg_node
+[11.909s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/environment/ament_prefix_path.sh
+[11.909s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/environment/ament_prefix_path.dsv
+[11.909s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/environment/path.sh
+[11.909s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/environment/path.dsv
+[11.909s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/local_setup.bash
+[11.910s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/local_setup.sh
+[11.910s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/local_setup.zsh
+[11.910s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/local_setup.dsv
+[11.910s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/package.dsv
+[11.910s] -- Installing: /workspace/ros2/install/urg_node/share/ament_index/resource_index/packages/urg_node
+[11.910s] -- Installing: /workspace/ros2/install/urg_node/share/ament_index/resource_index/rclcpp_components/urg_node
+[11.911s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/cmake/ament_cmake_export_dependencies-extras.cmake
+[11.911s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/cmake/ament_cmake_export_include_directories-extras.cmake
+[11.911s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/cmake/ament_cmake_export_libraries-extras.cmake
+[11.911s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/cmake/urg_nodeConfig.cmake
+[11.911s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/cmake/urg_nodeConfig-version.cmake
+[11.912s] -- Installing: /workspace/ros2/install/urg_node/share/urg_node/package.xml
+[11.913s] Invoked command in '/workspace/ros2/build/urg_node' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --install /workspace/ros2/build/urg_node

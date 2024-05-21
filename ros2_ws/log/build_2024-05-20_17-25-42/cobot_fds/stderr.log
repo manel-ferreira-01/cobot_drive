@@ -1,7 +1,0 @@
-[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:24:10:[m[K [01;31m[Kfatal error: [m[Kdrive.h: No such file or directory
-   24 | #include [01;31m[K"drive.h"[m[K
-      |          [01;31m[K^~~~~~~~~[m[K
-compilation terminated.
-gmake[2]: *** [CMakeFiles/cobot_drive_main.dir/build.make:76: CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/cobot_drive_main.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

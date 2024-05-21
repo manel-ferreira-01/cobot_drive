@@ -1,8 +1,0 @@
-/usr/bin/ld: CMakeFiles/cobot_drive_main.dir/src/drive.cpp.o: in function `CobotDrive::SerialReceive()':
-drive.cpp:(.text+0x1024): undefined reference to `checkfcs(char*, int)'
-/usr/bin/ld: CMakeFiles/cobot_drive_main.dir/src/drive.cpp.o: in function `CobotDrive::makercpacket(mspcommand_t*, unsigned char*)':
-drive.cpp:(.text+0x1299): undefined reference to `addfcs(char*, int)'
-collect2: error: ld returned 1 exit status
-gmake[2]: *** [CMakeFiles/cobot_drive_main.dir/build.make:260: cobot_drive_main] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/cobot_drive_main.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

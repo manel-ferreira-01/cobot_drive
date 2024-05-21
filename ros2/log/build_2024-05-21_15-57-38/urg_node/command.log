@@ -1,0 +1,2 @@
+Invoking command in '/workspace/ros2/build/urg_node': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /workspace/ros2/hardware/urg_node -DCMAKE_INSTALL_PREFIX=/workspace/ros2/install/urg_node
+Invoked command in '/workspace/ros2/build/urg_node' returned '1': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /workspace/ros2/hardware/urg_node -DCMAKE_INSTALL_PREFIX=/workspace/ros2/install/urg_node

@@ -1,0 +1,33 @@
+[0.022s] Invoking command in '/workspace/ros2/build/urg_node2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake /workspace/ros2/hardware/urg_node2 -DCMAKE_INSTALL_PREFIX=/workspace/ros2/install/urg_node2
+[0.034s] -- Found ament_cmake: 2.0.5 (/opt/ros/iron/share/ament_cmake/cmake)
+[0.174s] -- Found rclcpp: 21.0.6 (/opt/ros/iron/share/rclcpp/cmake)
+[0.200s] -- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+[0.213s] -- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+[0.227s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.243s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.383s] -- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+[0.384s] -- Found rmw_fastrtps_cpp: 7.1.3 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+[0.493s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.703s] -- Found rclcpp_components: 21.0.6 (/opt/ros/iron/share/rclcpp_components/cmake)
+[0.818s] -- Found rclcpp_lifecycle: 21.0.6 (/opt/ros/iron/share/rclcpp_lifecycle/cmake)
+[0.939s] -- Found sensor_msgs: 5.0.0 (/opt/ros/iron/share/sensor_msgs/cmake)
+[1.170s] -- Found diagnostic_updater: 3.1.2 (/opt/ros/iron/share/diagnostic_updater/cmake)
+[1.263s] -- Found laser_proc: 1.0.2 (/opt/ros/iron/share/laser_proc/cmake)
+[1.286s] -- Found ament_cmake_gtest: 2.0.5 (/opt/ros/iron/share/ament_cmake_gtest/cmake)
+[1.287s] -- Found gtest sources under '/opt/ros/iron/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[1.379s] -- Configuring done
+[1.384s] [31mCMake Error at CMakeLists.txt:34 (add_library):
+[1.384s]   Cannot find source file:
+[1.384s] 
+[1.384s]     urg_library/current/src/urg_sensor.c
+[1.384s] 
+[1.384s]   Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+[1.385s]   .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+[1.385s] 
+[1.385s] [0m
+[1.387s] [31mCMake Error at CMakeLists.txt:34 (add_library):
+[1.387s]   No SOURCES given to target: urg_c
+[1.387s] 
+[1.387s] [0m
+[1.387s] [0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+[1.394s] Invoked command in '/workspace/ros2/build/urg_node2' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake /workspace/ros2/hardware/urg_node2 -DCMAKE_INSTALL_PREFIX=/workspace/ros2/install/urg_node2

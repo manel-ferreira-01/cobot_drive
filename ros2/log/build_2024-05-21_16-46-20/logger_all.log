@@ -1,0 +1,366 @@
+[0.122s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.122s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7f87602e61a0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f8760426830>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f8760426830>>, mixin_verb=('build',))
+[0.241s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.241s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.242s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.242s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.242s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.242s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.242s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.242s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.242s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/workspace/ros2'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extensions ['ignore', 'ignore_ament_install']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extension 'ignore'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extension 'ignore_ament_install'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extensions ['colcon_pkg']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extension 'colcon_pkg'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extensions ['colcon_meta']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extension 'colcon_meta'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extensions ['ros']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extension 'ros'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extensions ['cmake', 'python']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extension 'cmake'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extension 'python'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extensions ['python_setup_py']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware) by extension 'python_setup_py'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/cobot_drive) by extensions ['ignore', 'ignore_ament_install']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/cobot_drive) by extension 'ignore'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/cobot_drive) by extension 'ignore_ament_install'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/cobot_drive) by extensions ['colcon_pkg']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/cobot_drive) by extension 'colcon_pkg'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/cobot_drive) by extensions ['colcon_meta']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/cobot_drive) by extension 'colcon_meta'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/cobot_drive) by extensions ['ros']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/cobot_drive) by extension 'ros'
+[0.258s] DEBUG:colcon.colcon_core.package_identification:Package 'hardware/cobot_drive' with type 'ros.ament_cmake' and name 'cobot_drive'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node) by extensions ['ignore', 'ignore_ament_install']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node) by extension 'ignore'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node) by extension 'ignore_ament_install'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node) by extensions ['colcon_pkg']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node) by extension 'colcon_pkg'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node) by extensions ['colcon_meta']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node) by extension 'colcon_meta'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node) by extensions ['ros']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node) by extension 'ros'
+[0.260s] DEBUG:colcon.colcon_core.package_identification:Package 'hardware/urg_node' with type 'ros.ament_cmake' and name 'urg_node'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node2) by extensions ['ignore', 'ignore_ament_install']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node2) by extension 'ignore'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node2) by extension 'ignore_ament_install'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node2) by extensions ['colcon_pkg']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node2) by extension 'colcon_pkg'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node2) by extensions ['colcon_meta']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node2) by extension 'colcon_meta'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node2) by extensions ['ros']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(hardware/urg_node2) by extension 'ros'
+[0.262s] DEBUG:colcon.colcon_core.package_identification:Package 'hardware/urg_node2' with type 'ros.ament_cmake' and name 'urg_node2'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(messages) by extensions ['ignore', 'ignore_ament_install']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(messages) by extension 'ignore'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(messages) by extension 'ignore_ament_install'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(messages) by extensions ['colcon_pkg']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(messages) by extension 'colcon_pkg'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(messages) by extensions ['colcon_meta']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(messages) by extension 'colcon_meta'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(messages) by extensions ['ros']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(messages) by extension 'ros'
+[0.263s] DEBUG:colcon.colcon_core.package_identification:Package 'messages' with type 'ros.ament_cmake' and name 'messages'
+[0.263s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.263s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.263s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.264s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.264s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'messages' build argument 'cmake_args' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'messages' build argument 'cmake_target' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'messages' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'messages' build argument 'cmake_clean_cache' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'messages' build argument 'cmake_clean_first' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'messages' build argument 'cmake_force_configure' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'messages' build argument 'ament_cmake_args' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'messages' build argument 'catkin_cmake_args' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'messages' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.285s] DEBUG:colcon.colcon_core.verb:Building package 'messages' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/ros2/build/messages', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/ros2/install/messages', 'merge_install': False, 'path': '/workspace/ros2/messages', 'symlink_install': False, 'test_result_base': None}
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'urg_node' build argument 'cmake_args' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'urg_node' build argument 'cmake_target' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'urg_node' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'urg_node' build argument 'cmake_clean_cache' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'urg_node' build argument 'cmake_clean_first' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'urg_node' build argument 'cmake_force_configure' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'urg_node' build argument 'ament_cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'urg_node' build argument 'catkin_cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'urg_node' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.286s] DEBUG:colcon.colcon_core.verb:Building package 'urg_node' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/ros2/build/urg_node', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/ros2/install/urg_node', 'merge_install': False, 'path': '/workspace/ros2/hardware/urg_node', 'symlink_install': False, 'test_result_base': None}
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'urg_node2' build argument 'cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'urg_node2' build argument 'cmake_target' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'urg_node2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'urg_node2' build argument 'cmake_clean_cache' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'urg_node2' build argument 'cmake_clean_first' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'urg_node2' build argument 'cmake_force_configure' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'urg_node2' build argument 'ament_cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'urg_node2' build argument 'catkin_cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'urg_node2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.286s] DEBUG:colcon.colcon_core.verb:Building package 'urg_node2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/ros2/build/urg_node2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/ros2/install/urg_node2', 'merge_install': False, 'path': '/workspace/ros2/hardware/urg_node2', 'symlink_install': False, 'test_result_base': None}
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'cobot_drive' build argument 'cmake_args' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'cobot_drive' build argument 'cmake_target' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'cobot_drive' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'cobot_drive' build argument 'cmake_clean_cache' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'cobot_drive' build argument 'cmake_clean_first' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'cobot_drive' build argument 'cmake_force_configure' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'cobot_drive' build argument 'ament_cmake_args' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'cobot_drive' build argument 'catkin_cmake_args' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'cobot_drive' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.287s] DEBUG:colcon.colcon_core.verb:Building package 'cobot_drive' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/ros2/build/cobot_drive', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/ros2/install/cobot_drive', 'merge_install': False, 'path': '/workspace/ros2/hardware/cobot_drive', 'symlink_install': False, 'test_result_base': None}
+[0.287s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.288s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.288s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/workspace/ros2/messages' with build type 'ament_cmake'
+[0.288s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/workspace/ros2/messages'
+[0.291s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.291s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.291s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.295s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/workspace/ros2/hardware/urg_node' with build type 'ament_cmake'
+[0.295s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/workspace/ros2/hardware/urg_node'
+[0.295s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.295s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.301s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/workspace/ros2/hardware/urg_node2' with build type 'ament_cmake'
+[0.302s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/workspace/ros2/hardware/urg_node2'
+[0.302s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.302s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.314s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/ros2/build/messages': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2/build/messages -- -j8 -l8
+[0.316s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/ros2/build/urg_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2/build/urg_node -- -j8 -l8
+[0.320s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/ros2/build/urg_node2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake /workspace/ros2/hardware/urg_node2 -DCMAKE_INSTALL_PREFIX=/workspace/ros2/install/urg_node2
+[0.464s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/ros2/build/urg_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2/build/urg_node -- -j8 -l8
+[0.517s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/ros2/build/urg_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /workspace/ros2/build/urg_node
+[0.545s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(urg_node)
+[0.545s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/ros2/build/urg_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /workspace/ros2/build/urg_node
+[0.548s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node' for CMake module files
+[0.549s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node' for CMake config files
+[0.549s] Level 1:colcon.colcon_core.shell:create_environment_hook('urg_node', 'cmake_prefix_path')
+[0.549s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node/share/urg_node/hook/cmake_prefix_path.ps1'
+[0.550s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/urg_node/share/urg_node/hook/cmake_prefix_path.dsv'
+[0.551s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node/share/urg_node/hook/cmake_prefix_path.sh'
+[0.552s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node/lib'
+[0.552s] Level 1:colcon.colcon_core.shell:create_environment_hook('urg_node', 'ld_library_path_lib')
+[0.552s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node/share/urg_node/hook/ld_library_path_lib.ps1'
+[0.553s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/urg_node/share/urg_node/hook/ld_library_path_lib.dsv'
+[0.553s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node/share/urg_node/hook/ld_library_path_lib.sh'
+[0.554s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node/bin'
+[0.554s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node/lib/pkgconfig/urg_node.pc'
+[0.556s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node/lib/python3.10/site-packages'
+[0.556s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node/bin'
+[0.556s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node/share/urg_node/package.ps1'
+[0.558s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/ros2/install/urg_node/share/urg_node/package.dsv'
+[0.559s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node/share/urg_node/package.sh'
+[0.560s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node/share/urg_node/package.bash'
+[0.561s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node/share/urg_node/package.zsh'
+[0.562s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/ros2/install/urg_node/share/colcon-core/packages/urg_node)
+[0.606s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(urg_node)
+[0.607s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node' for CMake module files
+[0.608s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node' for CMake config files
+[0.609s] Level 1:colcon.colcon_core.shell:create_environment_hook('urg_node', 'cmake_prefix_path')
+[0.609s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node/share/urg_node/hook/cmake_prefix_path.ps1'
+[0.610s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/urg_node/share/urg_node/hook/cmake_prefix_path.dsv'
+[0.610s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node/share/urg_node/hook/cmake_prefix_path.sh'
+[0.611s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node/lib'
+[0.611s] Level 1:colcon.colcon_core.shell:create_environment_hook('urg_node', 'ld_library_path_lib')
+[0.612s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node/share/urg_node/hook/ld_library_path_lib.ps1'
+[0.612s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/urg_node/share/urg_node/hook/ld_library_path_lib.dsv'
+[0.612s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node/share/urg_node/hook/ld_library_path_lib.sh'
+[0.613s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node/bin'
+[0.613s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node/lib/pkgconfig/urg_node.pc'
+[0.613s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node/lib/python3.10/site-packages'
+[0.614s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node/bin'
+[0.614s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node/share/urg_node/package.ps1'
+[0.615s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/ros2/install/urg_node/share/urg_node/package.dsv'
+[0.615s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node/share/urg_node/package.sh'
+[0.616s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node/share/urg_node/package.bash'
+[0.616s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node/share/urg_node/package.zsh'
+[0.617s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/ros2/install/urg_node/share/colcon-core/packages/urg_node)
+[0.709s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/ros2/build/messages' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2/build/messages -- -j8 -l8
+[0.792s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/ros2/build/messages': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /workspace/ros2/build/messages
+[0.859s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(messages)
+[0.860s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages' for CMake module files
+[0.860s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/ros2/build/messages' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /workspace/ros2/build/messages
+[0.861s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages' for CMake config files
+[0.862s] Level 1:colcon.colcon_core.shell:create_environment_hook('messages', 'cmake_prefix_path')
+[0.863s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/messages/share/messages/hook/cmake_prefix_path.ps1'
+[0.863s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/messages/share/messages/hook/cmake_prefix_path.dsv'
+[0.864s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/messages/share/messages/hook/cmake_prefix_path.sh'
+[0.865s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages/lib'
+[0.865s] Level 1:colcon.colcon_core.shell:create_environment_hook('messages', 'ld_library_path_lib')
+[0.865s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/messages/share/messages/hook/ld_library_path_lib.ps1'
+[0.866s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/messages/share/messages/hook/ld_library_path_lib.dsv'
+[0.866s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/messages/share/messages/hook/ld_library_path_lib.sh'
+[0.866s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages/bin'
+[0.866s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages/lib/pkgconfig/messages.pc'
+[0.867s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages/lib/python3.10/site-packages'
+[0.867s] Level 1:colcon.colcon_core.shell:create_environment_hook('messages', 'pythonpath')
+[0.867s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/messages/share/messages/hook/pythonpath.ps1'
+[0.867s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/messages/share/messages/hook/pythonpath.dsv'
+[0.868s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/messages/share/messages/hook/pythonpath.sh'
+[0.868s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages/bin'
+[0.869s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/messages/share/messages/package.ps1'
+[0.869s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/ros2/install/messages/share/messages/package.dsv'
+[0.870s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/messages/share/messages/package.sh'
+[0.870s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/messages/share/messages/package.bash'
+[0.870s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/messages/share/messages/package.zsh'
+[0.871s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/ros2/install/messages/share/colcon-core/packages/messages)
+[0.969s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(messages)
+[0.970s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages' for CMake module files
+[0.971s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages' for CMake config files
+[0.971s] Level 1:colcon.colcon_core.shell:create_environment_hook('messages', 'cmake_prefix_path')
+[0.972s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/messages/share/messages/hook/cmake_prefix_path.ps1'
+[0.973s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/messages/share/messages/hook/cmake_prefix_path.dsv'
+[0.974s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/messages/share/messages/hook/cmake_prefix_path.sh'
+[0.974s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages/lib'
+[0.974s] Level 1:colcon.colcon_core.shell:create_environment_hook('messages', 'ld_library_path_lib')
+[0.975s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/messages/share/messages/hook/ld_library_path_lib.ps1'
+[0.975s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/messages/share/messages/hook/ld_library_path_lib.dsv'
+[0.975s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/messages/share/messages/hook/ld_library_path_lib.sh'
+[0.976s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages/bin'
+[0.976s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages/lib/pkgconfig/messages.pc'
+[0.976s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages/lib/python3.10/site-packages'
+[0.976s] Level 1:colcon.colcon_core.shell:create_environment_hook('messages', 'pythonpath')
+[0.976s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/messages/share/messages/hook/pythonpath.ps1'
+[0.977s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/messages/share/messages/hook/pythonpath.dsv'
+[0.977s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/messages/share/messages/hook/pythonpath.sh'
+[0.978s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/messages/bin'
+[0.979s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/messages/share/messages/package.ps1'
+[0.980s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/ros2/install/messages/share/messages/package.dsv'
+[0.981s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/messages/share/messages/package.sh'
+[0.982s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/messages/share/messages/package.bash'
+[0.983s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/messages/share/messages/package.zsh'
+[0.983s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/ros2/install/messages/share/colcon-core/packages/messages)
+[0.983s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/workspace/ros2/hardware/cobot_drive' with build type 'ament_cmake'
+[0.984s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/workspace/ros2/hardware/cobot_drive'
+[0.984s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.984s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.999s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/ros2/build/cobot_drive': CMAKE_PREFIX_PATH=/workspace/ros2/install/messages:/workspace/ros2/install/urg_node:/workspace/ros2/install/cobot_drive:/opt/ros/iron LD_LIBRARY_PATH=/workspace/ros2/install/messages/lib:/workspace/ros2/install/urg_node/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib /usr/bin/cmake --build /workspace/ros2/build/cobot_drive -- -j8 -l8
+[1.115s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/ros2/build/cobot_drive' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2/install/messages:/workspace/ros2/install/urg_node:/workspace/ros2/install/cobot_drive:/opt/ros/iron LD_LIBRARY_PATH=/workspace/ros2/install/messages/lib:/workspace/ros2/install/urg_node/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib /usr/bin/cmake --build /workspace/ros2/build/cobot_drive -- -j8 -l8
+[1.161s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/ros2/build/cobot_drive': CMAKE_PREFIX_PATH=/workspace/ros2/install/messages:/workspace/ros2/install/urg_node:/workspace/ros2/install/cobot_drive:/opt/ros/iron LD_LIBRARY_PATH=/workspace/ros2/install/messages/lib:/workspace/ros2/install/urg_node/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib /usr/bin/cmake --install /workspace/ros2/build/cobot_drive
+[1.176s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cobot_drive)
+[1.177s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive' for CMake module files
+[1.178s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/ros2/build/cobot_drive' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2/install/messages:/workspace/ros2/install/urg_node:/workspace/ros2/install/cobot_drive:/opt/ros/iron LD_LIBRARY_PATH=/workspace/ros2/install/messages/lib:/workspace/ros2/install/urg_node/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib /usr/bin/cmake --install /workspace/ros2/build/cobot_drive
+[1.178s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive' for CMake config files
+[1.179s] Level 1:colcon.colcon_core.shell:create_environment_hook('cobot_drive', 'cmake_prefix_path')
+[1.179s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/cobot_drive/share/cobot_drive/hook/cmake_prefix_path.ps1'
+[1.180s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/cobot_drive/share/cobot_drive/hook/cmake_prefix_path.dsv'
+[1.180s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/cobot_drive/share/cobot_drive/hook/cmake_prefix_path.sh'
+[1.180s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive/lib'
+[1.180s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive/bin'
+[1.181s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive/lib/pkgconfig/cobot_drive.pc'
+[1.181s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive/lib/python3.10/site-packages'
+[1.181s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive/bin'
+[1.182s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/cobot_drive/share/cobot_drive/package.ps1'
+[1.182s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/ros2/install/cobot_drive/share/cobot_drive/package.dsv'
+[1.182s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/cobot_drive/share/cobot_drive/package.sh'
+[1.183s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/cobot_drive/share/cobot_drive/package.bash'
+[1.183s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/cobot_drive/share/cobot_drive/package.zsh'
+[1.183s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/ros2/install/cobot_drive/share/colcon-core/packages/cobot_drive)
+[1.231s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cobot_drive)
+[1.231s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive' for CMake module files
+[1.232s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive' for CMake config files
+[1.233s] Level 1:colcon.colcon_core.shell:create_environment_hook('cobot_drive', 'cmake_prefix_path')
+[1.234s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/cobot_drive/share/cobot_drive/hook/cmake_prefix_path.ps1'
+[1.234s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/cobot_drive/share/cobot_drive/hook/cmake_prefix_path.dsv'
+[1.235s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/cobot_drive/share/cobot_drive/hook/cmake_prefix_path.sh'
+[1.236s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive/lib'
+[1.236s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive/bin'
+[1.236s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive/lib/pkgconfig/cobot_drive.pc'
+[1.237s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive/lib/python3.10/site-packages'
+[1.237s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/cobot_drive/bin'
+[1.238s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/cobot_drive/share/cobot_drive/package.ps1'
+[1.239s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/ros2/install/cobot_drive/share/cobot_drive/package.dsv'
+[1.240s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/cobot_drive/share/cobot_drive/package.sh'
+[1.240s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/cobot_drive/share/cobot_drive/package.bash'
+[1.241s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/cobot_drive/share/cobot_drive/package.zsh'
+[1.242s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/ros2/install/cobot_drive/share/colcon-core/packages/cobot_drive)
+[1.854s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/ros2/build/urg_node2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake /workspace/ros2/hardware/urg_node2 -DCMAKE_INSTALL_PREFIX=/workspace/ros2/install/urg_node2
+[1.856s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/ros2/build/urg_node2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2/build/urg_node2 -- -j8 -l8
+[19.721s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/ros2/build/urg_node2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2/build/urg_node2 -- -j8 -l8
+[19.796s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/ros2/build/urg_node2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /workspace/ros2/build/urg_node2
+[19.815s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(urg_node2)
+[19.815s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2' for CMake module files
+[19.816s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/ros2/build/urg_node2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /workspace/ros2/build/urg_node2
+[19.816s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2' for CMake config files
+[19.817s] Level 1:colcon.colcon_core.shell:create_environment_hook('urg_node2', 'cmake_prefix_path')
+[19.817s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node2/share/urg_node2/hook/cmake_prefix_path.ps1'
+[19.817s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/urg_node2/share/urg_node2/hook/cmake_prefix_path.dsv'
+[19.818s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node2/share/urg_node2/hook/cmake_prefix_path.sh'
+[19.818s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2/lib'
+[19.818s] Level 1:colcon.colcon_core.shell:create_environment_hook('urg_node2', 'ld_library_path_lib')
+[19.818s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node2/share/urg_node2/hook/ld_library_path_lib.ps1'
+[19.819s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/urg_node2/share/urg_node2/hook/ld_library_path_lib.dsv'
+[19.819s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node2/share/urg_node2/hook/ld_library_path_lib.sh'
+[19.819s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2/bin'
+[19.819s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2/lib/pkgconfig/urg_node2.pc'
+[19.820s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2/lib/python3.10/site-packages'
+[19.820s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2/bin'
+[19.820s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node2/share/urg_node2/package.ps1'
+[19.821s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/ros2/install/urg_node2/share/urg_node2/package.dsv'
+[19.821s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node2/share/urg_node2/package.sh'
+[19.822s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node2/share/urg_node2/package.bash'
+[19.822s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node2/share/urg_node2/package.zsh'
+[19.822s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/ros2/install/urg_node2/share/colcon-core/packages/urg_node2)
+[19.892s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(urg_node2)
+[19.893s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2' for CMake module files
+[19.894s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2' for CMake config files
+[19.895s] Level 1:colcon.colcon_core.shell:create_environment_hook('urg_node2', 'cmake_prefix_path')
+[19.895s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node2/share/urg_node2/hook/cmake_prefix_path.ps1'
+[19.896s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/urg_node2/share/urg_node2/hook/cmake_prefix_path.dsv'
+[19.897s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node2/share/urg_node2/hook/cmake_prefix_path.sh'
+[19.898s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2/lib'
+[19.898s] Level 1:colcon.colcon_core.shell:create_environment_hook('urg_node2', 'ld_library_path_lib')
+[19.898s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node2/share/urg_node2/hook/ld_library_path_lib.ps1'
+[19.899s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/ros2/install/urg_node2/share/urg_node2/hook/ld_library_path_lib.dsv'
+[19.899s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/ros2/install/urg_node2/share/urg_node2/hook/ld_library_path_lib.sh'
+[19.900s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2/bin'
+[19.900s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2/lib/pkgconfig/urg_node2.pc'
+[19.901s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2/lib/python3.10/site-packages'
+[19.901s] Level 1:colcon.colcon_core.environment:checking '/workspace/ros2/install/urg_node2/bin'
+[19.902s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node2/share/urg_node2/package.ps1'
+[19.903s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/ros2/install/urg_node2/share/urg_node2/package.dsv'
+[19.904s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node2/share/urg_node2/package.sh'
+[19.905s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node2/share/urg_node2/package.bash'
+[19.905s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/ros2/install/urg_node2/share/urg_node2/package.zsh'
+[19.906s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/ros2/install/urg_node2/share/colcon-core/packages/urg_node2)
+[19.907s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[19.907s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[19.907s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[19.907s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[19.917s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[19.917s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[19.917s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[19.917s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[19.918s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.InvalidFileContent: D-Bus library appears to be incorrectly set up: see the manual page for dbus-uuidgen to correct this issue. (Failed to open "/var/lib/dbus/machine-id": No such file or directory; UUID file '/etc/machine-id' should contain a hex string of length 32, not length 0, with no other text)
+[19.918s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[19.918s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/ros2/install/local_setup.ps1'
+[19.920s] INFO:colcon.colcon_core.shell:Creating prefix util module '/workspace/ros2/install/_local_setup_util_ps1.py'
+[19.923s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/ros2/install/setup.ps1'
+[19.925s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/ros2/install/local_setup.sh'
+[19.926s] INFO:colcon.colcon_core.shell:Creating prefix util module '/workspace/ros2/install/_local_setup_util_sh.py'
+[19.926s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/ros2/install/setup.sh'
+[19.928s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/ros2/install/local_setup.bash'
+[19.928s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/ros2/install/setup.bash'
+[19.929s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/ros2/install/local_setup.zsh'
+[19.930s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/ros2/install/setup.zsh'
