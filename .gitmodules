@@ -1,3 +1,6 @@
 [submodule "src/hardware/urg_node"]
 	path = src/hardware/urg_node
 	url = git@github.com:ros-drivers/urg_node.git
+[submodule "ros2_ws/urg_node"]
+	path = ros2_ws/urg_node
+	url = git@github.com:ros-drivers/urg_node.git
