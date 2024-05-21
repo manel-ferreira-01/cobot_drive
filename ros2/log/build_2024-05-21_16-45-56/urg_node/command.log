@@ -1,4 +1,0 @@
-Invoking command in '/workspace/ros2/build/urg_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2/build/urg_node -- -j8 -l8
-Invoked command in '/workspace/ros2/build/urg_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2/build/urg_node -- -j8 -l8
-Invoking command in '/workspace/ros2/build/urg_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /workspace/ros2/build/urg_node
-Invoked command in '/workspace/ros2/build/urg_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /workspace/ros2/build/urg_node

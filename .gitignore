@@ -53,3 +53,7 @@ CATKIN_IGNORE
 
 # vscode ws files
 .vscode/
+
+build/
+install/
+log/

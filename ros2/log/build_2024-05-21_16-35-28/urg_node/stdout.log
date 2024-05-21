@@ -1,4 +1,0 @@
--- Found ament_cmake: 2.0.5 (/opt/ros/iron/share/ament_cmake/cmake)
--- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0")  
--- Configuring incomplete, errors occurred!
-See also "/workspace/ros2/build/urg_node/CMakeFiles/CMakeOutput.log".
