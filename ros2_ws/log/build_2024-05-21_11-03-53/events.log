@@ -1,0 +1,283 @@
+[0.000000] (-) TimerEvent: {}
+[0.000408] (cobot_fds) JobQueued: {'identifier': 'cobot_fds', 'dependencies': OrderedDict()}
+[0.000483] (messages) JobQueued: {'identifier': 'messages', 'dependencies': OrderedDict()}
+[0.000538] (cobot_fds) JobStarted: {'identifier': 'cobot_fds'}
+[0.007660] (messages) JobStarted: {'identifier': 'messages'}
+[0.012213] (cobot_fds) JobProgress: {'identifier': 'cobot_fds', 'progress': 'cmake'}
+[0.013019] (cobot_fds) JobProgress: {'identifier': 'cobot_fds', 'progress': 'build'}
+[0.014176] (cobot_fds) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspace/ros2_ws/build/cobot_fds', '--', '-j8', '-l8'], 'cwd': '/workspace/ros2_ws/build/cobot_fds', 'env': OrderedDict([('HOSTNAME', 'c9a046895a51'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/workspace/ros2_ws/install/messages/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib'), ('HOME', '/root'), ('OLDPWD', '/workspace'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/workspace/ros2_ws/install'), ('ROS_DISTRO', 'iron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('PATH', '/opt/ros/iron/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/workspace/ros2_ws/install/messages:/workspace/ros2_ws/install/cobot_fds:/opt/ros/iron'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('PWD', '/workspace/ros2_ws/build/cobot_fds'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/workspace/ros2_ws/install/messages/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspace/ros2_ws/install/messages:/workspace/ros2_ws/install/cobot_fds:/opt/ros/iron')]), 'shell': False}
+[0.018519] (messages) JobProgress: {'identifier': 'messages', 'progress': 'cmake'}
+[0.019986] (messages) JobProgress: {'identifier': 'messages', 'progress': 'build'}
+[0.020088] (messages) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspace/ros2_ws/build/messages', '--', '-j8', '-l8'], 'cwd': '/workspace/ros2_ws/build/messages', 'env': OrderedDict([('HOSTNAME', 'c9a046895a51'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/workspace/ros2_ws/install/messages/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib'), ('HOME', '/root'), ('OLDPWD', '/workspace'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/workspace/ros2_ws/install'), ('ROS_DISTRO', 'iron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('PATH', '/opt/ros/iron/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/workspace/ros2_ws/install/messages:/workspace/ros2_ws/install/cobot_fds:/opt/ros/iron'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('PWD', '/workspace/ros2_ws/build/messages'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/workspace/ros2_ws/install/messages/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspace/ros2_ws/install/messages:/workspace/ros2_ws/install/cobot_fds:/opt/ros/iron')]), 'shell': False}
+[0.078799] (cobot_fds) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cobot_drive_main\x1b[0m\n'}
+[0.083885] (messages) StdoutLine: {'line': b'[  2%] Built target messages__rosidl_generator_type_description\n'}
+[0.095292] (messages) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_copy_messages\n'}
+[0.098665] (-) TimerEvent: {}
+[0.107373] (messages) StdoutLine: {'line': b'[  5%] Built target messages__cpp\n'}
+[0.111206] (messages) StdoutLine: {'line': b'[ 20%] Built target messages__rosidl_generator_c\n'}
+[0.112108] (cobot_fds) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o\x1b[0m\n'}
+[0.142030] (messages) StdoutLine: {'line': b'[ 29%] Built target messages__rosidl_typesupport_introspection_c\n'}
+[0.144321] (messages) StdoutLine: {'line': b'[ 47%] Built target messages__rosidl_typesupport_cpp\n'}
+[0.144532] (messages) StdoutLine: {'line': b'[ 47%] Built target messages__rosidl_typesupport_c\n'}
+[0.144817] (messages) StdoutLine: {'line': b'[ 55%] Built target messages__rosidl_typesupport_introspection_cpp\n'}
+[0.146591] (messages) StdoutLine: {'line': b'[ 64%] Built target messages__rosidl_typesupport_fastrtps_c\n'}
+[0.154464] (messages) StdoutLine: {'line': b'[ 73%] Built target messages__rosidl_typesupport_fastrtps_cpp\n'}
+[0.183709] (messages) StdoutLine: {'line': b'[ 73%] Built target messages\n'}
+[0.198817] (-) TimerEvent: {}
+[0.208780] (messages) StdoutLine: {'line': b'[ 76%] Built target messages__py\n'}
+[0.243621] (messages) StdoutLine: {'line': b'[ 82%] Built target messages__rosidl_generator_py\n'}
+[0.273701] (messages) StdoutLine: {'line': b'[ 88%] Built target messages__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.274325] (messages) StdoutLine: {'line': b'[ 94%] Built target messages__rosidl_typesupport_c__pyext\n'}
+[0.277016] (messages) StdoutLine: {'line': b'[100%] Built target messages__rosidl_typesupport_introspection_c__pyext\n'}
+[0.298955] (-) TimerEvent: {}
+[0.343854] (messages) StdoutLine: {'line': b'running egg_info\n'}
+[0.344605] (messages) StdoutLine: {'line': b'writing messages.egg-info/PKG-INFO\n'}
+[0.344856] (messages) StdoutLine: {'line': b'writing dependency_links to messages.egg-info/dependency_links.txt\n'}
+[0.345129] (messages) StdoutLine: {'line': b'writing top-level names to messages.egg-info/top_level.txt\n'}
+[0.347247] (messages) StdoutLine: {'line': b"reading manifest file 'messages.egg-info/SOURCES.txt'\n"}
+[0.347885] (messages) StdoutLine: {'line': b"writing manifest file 'messages.egg-info/SOURCES.txt'\n"}
+[0.385854] (messages) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_messages_egg\n'}
+[0.398139] (messages) CommandEnded: {'returncode': 0}
+[0.399267] (-) TimerEvent: {}
+[0.491156] (messages) JobProgress: {'identifier': 'messages', 'progress': 'install'}
+[0.499381] (-) TimerEvent: {}
+[0.505245] (messages) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspace/ros2_ws/build/messages'], 'cwd': '/workspace/ros2_ws/build/messages', 'env': OrderedDict([('HOSTNAME', 'c9a046895a51'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/workspace/ros2_ws/install/messages/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib'), ('HOME', '/root'), ('OLDPWD', '/workspace'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/workspace/ros2_ws/install'), ('ROS_DISTRO', 'iron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('PATH', '/opt/ros/iron/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/workspace/ros2_ws/install/messages:/workspace/ros2_ws/install/cobot_fds:/opt/ros/iron'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('PWD', '/workspace/ros2_ws/build/messages'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/workspace/ros2_ws/install/messages/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspace/ros2_ws/install/messages:/workspace/ros2_ws/install/cobot_fds:/opt/ros/iron')]), 'shell': False}
+[0.516421] (messages) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.517105] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/ament_index/resource_index/rosidl_interfaces/messages\n'}
+[0.517292] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/msg/CobotRawStatus.json\n'}
+[0.517456] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages\n'}
+[0.517702] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg\n'}
+[0.517881] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/rosidl_generator_c__visibility_control.h\n'}
+[0.518028] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail\n'}
+[0.518169] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__type_support.c\n'}
+[0.518313] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__struct.h\n'}
+[0.518464] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__functions.h\n'}
+[0.518609] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__functions.c\n'}
+[0.518755] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__description.c\n'}
+[0.518907] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__type_support.h\n'}
+[0.519054] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/cobot_raw_status.h\n'}
+[0.523429] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/environment/library_path.sh\n'}
+[0.523984] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/environment/library_path.dsv\n'}
+[0.524128] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/libmessages__rosidl_generator_c.so\n'}
+[0.524262] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages\n'}
+[0.524394] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg\n'}
+[0.524528] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail\n'}
+[0.524681] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__rosidl_typesupport_fastrtps_c.h\n'}
+[0.524822] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[0.524959] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/libmessages__rosidl_typesupport_fastrtps_c.so\n'}
+[0.525094] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages\n'}
+[0.525227] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg\n'}
+[0.525362] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[0.525545] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail\n'}
+[0.525687] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__type_support.c\n'}
+[0.525822] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__rosidl_typesupport_introspection_c.h\n'}
+[0.525999] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/libmessages__rosidl_typesupport_introspection_c.so\n'}
+[0.526138] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/libmessages__rosidl_typesupport_c.so\n'}
+[0.526285] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages\n'}
+[0.526421] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg\n'}
+[0.526558] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/cobot_raw_status.hpp\n'}
+[0.526695] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail\n'}
+[0.526832] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__builder.hpp\n'}
+[0.526972] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__struct.hpp\n'}
+[0.527108] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__traits.hpp\n'}
+[0.527243] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages\n'}
+[0.527380] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg\n'}
+[0.527515] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[0.527652] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail\n'}
+[0.527787] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/dds_fastrtps\n'}
+[0.527922] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.528059] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/libmessages__rosidl_typesupport_fastrtps_cpp.so\n'}
+[0.528195] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages\n'}
+[0.528331] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg\n'}
+[0.528465] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail\n'}
+[0.528602] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.528738] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__type_support.cpp\n'}
+[0.528873] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/libmessages__rosidl_typesupport_introspection_cpp.so\n'}
+[0.529012] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/libmessages__rosidl_typesupport_cpp.so\n'}
+[0.529149] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/environment/pythonpath.sh\n'}
+[0.529285] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/environment/pythonpath.dsv\n'}
+[0.529418] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages-0.0.0-py3.10.egg-info\n'}
+[0.530107] (messages) StdoutLine: {'line': b'-- Installing: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[0.530300] (messages) StdoutLine: {'line': b'-- Installing: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[0.530440] (messages) StdoutLine: {'line': b'-- Installing: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[0.530587] (messages) StdoutLine: {'line': b'-- Installing: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[0.530724] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages\n'}
+[0.530861] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/messages_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.530996] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/_messages_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[0.531129] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/_messages_s.ep.rosidl_typesupport_c.c\n'}
+[0.531263] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/msg\n'}
+[0.531396] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/msg/_cobot_raw_status.py\n'}
+[0.531530] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/msg/_cobot_raw_status_s.c\n'}
+[0.531781] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/msg/__init__.py\n'}
+[0.531971] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/__init__.py\n'}
+[0.532367] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/messages_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.532521] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/_messages_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[0.532658] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/libmessages__rosidl_generator_py.so\n'}
+[0.532794] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/messages_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.559412] (messages) StdoutLine: {'line': b"Listing '/workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages'...\n"}
+[0.559746] (messages) StdoutLine: {'line': b"Listing '/workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/msg'...\n"}
+[0.564974] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/messages_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.565392] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/messages_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.566013] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/python3.10/site-packages/messages/messages_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.566573] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/lib/libmessages__rosidl_generator_py.so\n'}
+[0.566944] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/msg/CobotRawStatus.idl\n'}
+[0.567244] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/msg/CobotRawStatus.msg\n'}
+[0.567729] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/ament_index/resource_index/package_run_dependencies/messages\n'}
+[0.568067] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/ament_index/resource_index/parent_prefix_path/messages\n'}
+[0.568321] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/environment/ament_prefix_path.sh\n'}
+[0.568540] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/environment/ament_prefix_path.dsv\n'}
+[0.568725] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/environment/path.sh\n'}
+[0.569127] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/environment/path.dsv\n'}
+[0.569298] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/local_setup.bash\n'}
+[0.569461] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/local_setup.sh\n'}
+[0.569696] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/local_setup.zsh\n'}
+[0.570126] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/local_setup.dsv\n'}
+[0.570304] (messages) StdoutLine: {'line': b'-- Installing: /workspace/ros2_ws/install/messages/share/messages/package.dsv\n'}
+[0.570475] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/ament_index/resource_index/packages/messages\n'}
+[0.570662] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/export_messages__rosidl_generator_cExport.cmake\n'}
+[0.570831] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/export_messages__rosidl_generator_cExport-noconfig.cmake\n'}
+[0.570975] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/export_messages__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[0.571111] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/export_messages__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[0.571367] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/messages__rosidl_typesupport_introspection_cExport.cmake\n'}
+[0.571505] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/messages__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[0.571639] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/messages__rosidl_typesupport_cExport.cmake\n'}
+[0.571776] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/messages__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[0.571914] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/export_messages__rosidl_generator_cppExport.cmake\n'}
+[0.572059] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/export_messages__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[0.572192] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/export_messages__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[0.572377] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/messages__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[0.572509] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/messages__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[0.572638] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/messages__rosidl_typesupport_cppExport.cmake\n'}
+[0.572774] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/messages__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[0.572917] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/export_messages__rosidl_generator_pyExport.cmake\n'}
+[0.573048] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/export_messages__rosidl_generator_pyExport-noconfig.cmake\n'}
+[0.573178] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/rosidl_cmake-extras.cmake\n'}
+[0.573308] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[0.573439] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.573597] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.573728] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.573856] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[0.573999] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[0.574136] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/messagesConfig.cmake\n'}
+[0.574274] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/cmake/messagesConfig-version.cmake\n'}
+[0.574410] (messages) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/messages/share/messages/package.xml\n'}
+[0.575590] (messages) CommandEnded: {'returncode': 0}
+[0.599527] (-) TimerEvent: {}
+[0.701162] (-) TimerEvent: {}
+[0.704644] (messages) JobEnded: {'identifier': 'messages', 'rc': 0}
+[0.801329] (-) TimerEvent: {}
+[0.901762] (-) TimerEvent: {}
+[1.002180] (-) TimerEvent: {}
+[1.102597] (-) TimerEvent: {}
+[1.203034] (-) TimerEvent: {}
+[1.303431] (-) TimerEvent: {}
+[1.403848] (-) TimerEvent: {}
+[1.504234] (-) TimerEvent: {}
+[1.604644] (-) TimerEvent: {}
+[1.705077] (-) TimerEvent: {}
+[1.805509] (-) TimerEvent: {}
+[1.905906] (-) TimerEvent: {}
+[2.006303] (-) TimerEvent: {}
+[2.106687] (-) TimerEvent: {}
+[2.207616] (-) TimerEvent: {}
+[2.308069] (-) TimerEvent: {}
+[2.408490] (-) TimerEvent: {}
+[2.508915] (-) TimerEvent: {}
+[2.609336] (-) TimerEvent: {}
+[2.709791] (-) TimerEvent: {}
+[2.810205] (-) TimerEvent: {}
+[2.910607] (-) TimerEvent: {}
+[3.011024] (-) TimerEvent: {}
+[3.111687] (-) TimerEvent: {}
+[3.212584] (-) TimerEvent: {}
+[3.313006] (-) TimerEvent: {}
+[3.413426] (-) TimerEvent: {}
+[3.513850] (-) TimerEvent: {}
+[3.614251] (-) TimerEvent: {}
+[3.714659] (-) TimerEvent: {}
+[3.815099] (-) TimerEvent: {}
+[3.915545] (-) TimerEvent: {}
+[4.016161] (-) TimerEvent: {}
+[4.116586] (-) TimerEvent: {}
+[4.216999] (-) TimerEvent: {}
+[4.317414] (-) TimerEvent: {}
+[4.417828] (-) TimerEvent: {}
+[4.518222] (-) TimerEvent: {}
+[4.618646] (-) TimerEvent: {}
+[4.719071] (-) TimerEvent: {}
+[4.819472] (-) TimerEvent: {}
+[4.919912] (-) TimerEvent: {}
+[5.020374] (-) TimerEvent: {}
+[5.120795] (-) TimerEvent: {}
+[5.221225] (-) TimerEvent: {}
+[5.321621] (-) TimerEvent: {}
+[5.422022] (-) TimerEvent: {}
+[5.522449] (-) TimerEvent: {}
+[5.561995] (cobot_fds) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/workspace/ros2_ws/cobot_fds/include/cobot_drive_main.hpp:3\x1b[m\x1b[K,\n'}
+[5.562330] (cobot_fds) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:22\x1b[m\x1b[K:\n'}
+[5.562485] (cobot_fds) StderrLine: {'line': b'\x1b[01m\x1b[K/workspace/ros2_ws/cobot_fds/include/drive.h:47:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvector2d normalize(const vector2d&, double)\x1b[m\x1b[K\xe2\x80\x99 defined but not used [\x1b[01;35m\x1b[K-Wunused-function\x1b[m\x1b[K]\n'}
+[5.562648] (cobot_fds) StderrLine: {'line': b'   47 | static vector2d \x1b[01;35m\x1b[Knormalize\x1b[m\x1b[K(const vector2d& v, double len) {\n'}
+[5.562784] (cobot_fds) StderrLine: {'line': b'      |                 \x1b[01;35m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.622635] (-) TimerEvent: {}
+[5.723113] (-) TimerEvent: {}
+[5.823549] (-) TimerEvent: {}
+[5.923928] (-) TimerEvent: {}
+[6.024342] (-) TimerEvent: {}
+[6.125289] (-) TimerEvent: {}
+[6.225840] (-) TimerEvent: {}
+[6.326241] (-) TimerEvent: {}
+[6.426642] (-) TimerEvent: {}
+[6.527014] (-) TimerEvent: {}
+[6.627392] (-) TimerEvent: {}
+[6.727805] (-) TimerEvent: {}
+[6.828168] (-) TimerEvent: {}
+[6.928555] (-) TimerEvent: {}
+[7.028980] (-) TimerEvent: {}
+[7.129379] (-) TimerEvent: {}
+[7.229810] (-) TimerEvent: {}
+[7.330215] (-) TimerEvent: {}
+[7.430621] (-) TimerEvent: {}
+[7.531026] (-) TimerEvent: {}
+[7.631417] (-) TimerEvent: {}
+[7.731811] (-) TimerEvent: {}
+[7.832246] (-) TimerEvent: {}
+[7.932675] (-) TimerEvent: {}
+[8.033280] (-) TimerEvent: {}
+[8.133696] (-) TimerEvent: {}
+[8.234064] (-) TimerEvent: {}
+[8.334493] (-) TimerEvent: {}
+[8.434958] (-) TimerEvent: {}
+[8.535412] (-) TimerEvent: {}
+[8.635875] (-) TimerEvent: {}
+[8.637956] (cobot_fds) StdoutLine: {'line': b'[ 40%] \x1b[32m\x1b[1mLinking CXX executable cobot_drive_main\x1b[0m\n'}
+[8.736031] (-) TimerEvent: {}
+[8.836488] (-) TimerEvent: {}
+[8.936956] (-) TimerEvent: {}
+[9.037360] (-) TimerEvent: {}
+[9.137764] (-) TimerEvent: {}
+[9.170003] (cobot_fds) StdoutLine: {'line': b'[100%] Built target cobot_drive_main\n'}
+[9.179812] (cobot_fds) CommandEnded: {'returncode': 0}
+[9.227666] (cobot_fds) JobProgress: {'identifier': 'cobot_fds', 'progress': 'install'}
+[9.228164] (cobot_fds) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspace/ros2_ws/build/cobot_fds'], 'cwd': '/workspace/ros2_ws/build/cobot_fds', 'env': OrderedDict([('HOSTNAME', 'c9a046895a51'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/workspace/ros2_ws/install/messages/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib'), ('HOME', '/root'), ('OLDPWD', '/workspace'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/workspace/ros2_ws/install'), ('ROS_DISTRO', 'iron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('PATH', '/opt/ros/iron/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/workspace/ros2_ws/install/messages:/workspace/ros2_ws/install/cobot_fds:/opt/ros/iron'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('PWD', '/workspace/ros2_ws/build/cobot_fds'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/workspace/ros2_ws/install/messages/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspace/ros2_ws/install/messages:/workspace/ros2_ws/install/cobot_fds:/opt/ros/iron')]), 'shell': False}
+[9.237911] (-) TimerEvent: {}
+[9.238265] (cobot_fds) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[9.238587] (cobot_fds) StdoutLine: {'line': b'-- Installing: /workspace/ros2_ws/install/cobot_fds/lib/cobot_fds/cobot_drive_main\n'}
+[9.246694] (cobot_fds) StdoutLine: {'line': b'-- Set runtime path of "/workspace/ros2_ws/install/cobot_fds/lib/cobot_fds/cobot_drive_main" to ""\n'}
+[9.247031] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/ament_index/resource_index/package_run_dependencies/cobot_fds\n'}
+[9.247220] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/ament_index/resource_index/parent_prefix_path/cobot_fds\n'}
+[9.247395] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/ament_prefix_path.sh\n'}
+[9.247642] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/ament_prefix_path.dsv\n'}
+[9.247941] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/path.sh\n'}
+[9.248114] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/path.dsv\n'}
+[9.248279] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.bash\n'}
+[9.248447] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.sh\n'}
+[9.248615] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.zsh\n'}
+[9.248783] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.dsv\n'}
+[9.248948] (cobot_fds) StdoutLine: {'line': b'-- Installing: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/package.dsv\n'}
+[9.249113] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/ament_index/resource_index/packages/cobot_fds\n'}
+[9.249278] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/cmake/cobot_fdsConfig.cmake\n'}
+[9.249442] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/cmake/cobot_fdsConfig-version.cmake\n'}
+[9.249650] (cobot_fds) StdoutLine: {'line': b'-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/package.xml\n'}
+[9.250912] (cobot_fds) CommandEnded: {'returncode': 0}
+[9.319250] (cobot_fds) JobEnded: {'identifier': 'cobot_fds', 'rc': 0}
+[9.320784] (-) EventReactorShutdown: {}

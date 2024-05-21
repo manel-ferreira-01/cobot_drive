@@ -1,0 +1,17 @@
+[0.011s] Invoking command in '/workspace/ros2_ws/build/messages': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /workspace/ros2_ws/messages -DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/install/messages
+[0.024s] -- Found ament_cmake: 2.0.5 (/opt/ros/iron/share/ament_cmake/cmake)
+[0.174s] -- Found rosidl_default_generators: 1.5.0 (/opt/ros/iron/share/rosidl_default_generators/cmake)
+[0.178s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.203s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.227s] -- Found rosidl_adapter: 4.0.1 (/opt/ros/iron/share/rosidl_adapter/cmake)
+[0.398s] [31mCMake Error at /opt/ros/iron/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:259 (message):
+[0.399s]   Packages installing interfaces must include
+[0.399s]   '<member_of_group>rosidl_interface_packages</member_of_group>' in their
+[0.400s]   package.xml
+[0.400s] Call Stack (most recent call first):
+[0.400s]   CMakeLists.txt:12 (rosidl_generate_interfaces)
+[0.400s] 
+[0.400s] [0m
+[0.400s] -- Configuring incomplete, errors occurred!
+[0.401s] See also "/workspace/ros2_ws/build/messages/CMakeFiles/CMakeOutput.log".
+[0.407s] Invoked command in '/workspace/ros2_ws/build/messages' returned '1': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /workspace/ros2_ws/messages -DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/install/messages

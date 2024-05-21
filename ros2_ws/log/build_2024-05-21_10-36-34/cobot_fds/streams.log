@@ -1,0 +1,22 @@
+[0.015s] Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+[0.074s] [35m[1mConsolidate compiler generated dependencies of target cobot_drive_main[0m
+[0.111s] [100%] Built target cobot_drive_main
+[0.124s] Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+[0.166s] Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /workspace/ros2_ws/build/cobot_fds
+[0.175s] -- Install configuration: ""
+[0.176s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/ament_index/resource_index/package_run_dependencies/cobot_fds
+[0.176s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/ament_index/resource_index/parent_prefix_path/cobot_fds
+[0.176s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/ament_prefix_path.sh
+[0.176s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/ament_prefix_path.dsv
+[0.176s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/path.sh
+[0.177s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/path.dsv
+[0.177s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.bash
+[0.177s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.sh
+[0.177s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.zsh
+[0.177s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.dsv
+[0.178s] -- Installing: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/package.dsv
+[0.178s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/ament_index/resource_index/packages/cobot_fds
+[0.179s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/cmake/cobot_fdsConfig.cmake
+[0.179s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/cmake/cobot_fdsConfig-version.cmake
+[0.180s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/package.xml
+[0.180s] Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /workspace/ros2_ws/build/cobot_fds

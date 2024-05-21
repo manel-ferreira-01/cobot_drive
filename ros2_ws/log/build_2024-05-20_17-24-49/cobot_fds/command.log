@@ -1,0 +1,4 @@
+Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --install /workspace/ros2_ws/build/cobot_fds
+Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --install /workspace/ros2_ws/build/cobot_fds

@@ -1,0 +1,19 @@
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:[m[K In constructor ‘[01m[KcobotDriveMain::cobotDriveMain()[m[K’:
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:36:37:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kstatic[m[K’
+   36 |   printf("got to the constructor\n")
+      |                                     [01;31m[K^[m[K
+      |                                     [32m[K;[m[K
+   37 |   [32m[Kstatic[m[K const bool debug = false;
+      |   [32m[K~~~~~~[m[K                             
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:51:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kdebug[m[K’ was not declared in this scope
+   51 |   if([01;31m[Kdebug[m[K) printf("Using port %s\n",serialPort);
+      |      [01;31m[K^~~~~[m[K
+In file included from [01m[K/workspace/ros2_ws/cobot_fds/include/cobot_drive_main.hpp:3[m[K,
+                 from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:22[m[K:
+[01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:[m[K At global scope:
+[01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:47:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvector2d normalize(const vector2d&, double)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+   47 | static vector2d [01;35m[Knormalize[m[K(const vector2d& v, double len) {
+      |                 [01;35m[K^~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/cobot_drive_main.dir/build.make:118: CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/cobot_drive_main.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

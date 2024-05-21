@@ -1,0 +1,139 @@
+[0.018s] Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+[0.049s] -- Found ament_cmake: 2.0.5 (/opt/ros/iron/share/ament_cmake/cmake)
+[0.228s] -- Found rclcpp: 21.0.6 (/opt/ros/iron/share/rclcpp/cmake)
+[0.258s] -- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+[0.268s] -- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+[0.285s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.306s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.482s] -- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+[0.483s] -- Found rmw_fastrtps_cpp: 7.1.3 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+[0.594s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.789s] -- Found std_msgs: 5.0.0 (/opt/ros/iron/share/std_msgs/cmake)
+[0.821s] -- Found tf2_ros: 0.31.6 (/opt/ros/iron/share/tf2_ros/cmake)
+[1.297s] -- Found nav_msgs: 5.0.0 (/opt/ros/iron/share/nav_msgs/cmake)
+[1.419s] -- Found messages: 0.0.0 (/workspace/ros2_ws/install/messages/share/messages/cmake)
+[1.463s] -- Found ament_lint_auto: 0.14.3 (/opt/ros/iron/share/ament_lint_auto/cmake)
+[1.541s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.542s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.542s] -- Configured cppcheck include dirs: /workspace/ros2_ws/cobot_fds/include
+[1.543s] -- Configured cppcheck exclude dirs and/or files: 
+[1.543s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.543s] -- Configured cpplint exclude dirs and/or files: 
+[1.544s] -- Added test 'lint_cmake' to check CMake code style
+[1.545s] -- Added test 'uncrustify' to check C / C++ code style
+[1.545s] -- Configured uncrustify additional arguments: 
+[1.545s] -- Added test 'xmllint' to check XML markup files
+[1.546s] -- Configuring done
+[1.560s] -- Generating done
+[1.562s] -- Build files have been written to: /workspace/ros2_ws/build/cobot_fds
+[1.614s] [ 50%] [32mBuilding CXX object CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o[0m
+[5.025s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:41:1:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf[m[K’ does not name a type; did you mean ‘[01m[Ktm[m[K’?
+[5.026s]    41 | [01;31m[Ktf[m[K::TransformBroadcaster *tfBroadcaster;
+[5.026s]       | [01;31m[K^~[m[K
+[5.026s]       | [32m[Ktm[m[K
+[5.026s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:42:1:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ does not name a type
+[5.026s]    42 | [01;31m[Kros[m[K::Publisher cobotRawStatusPublisher;
+[5.026s]       | [01;31m[K^~~[m[K
+[5.028s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:43:1:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ does not name a type
+[5.028s]    43 | [01;31m[Kros[m[K::Publisher cobotOdometryPublisher;
+[5.028s]       | [01;31m[K^~~[m[K
+[5.029s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:44:1:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ does not name a type
+[5.029s]    44 | [01;31m[Kros[m[K::Subscriber drive_sub;
+[5.029s]       | [01;31m[K^~~[m[K
+[5.030s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:46:46:[m[K [01;31m[Kerror: [m[K‘[01m[KTwistStampedPtr[m[K’ in namespace ‘[01m[Kgeometry_msgs[m[K’ does not name a type
+[5.030s]    46 | void cobotDriveCallback(const geometry_msgs::[01;31m[KTwistStampedPtr[m[K& msg) {
+[5.030s]       |                                              [01;31m[K^~~~~~~~~~~~~~~[m[K
+[5.030s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:[m[K In function ‘[01m[Kvoid cobotDriveCallback(const int&)[m[K’:
+[5.030s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:47:28:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[5.030s]    47 |   cobotDrive->setSpeeds(msg[01;31m[K->[m[Ktwist.linear.x, msg->twist.linear.y, msg->twist.angular.z);
+[5.031s]       |                            [01;31m[K^~[m[K
+[5.031s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:47:49:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[5.031s]    47 |   cobotDrive->setSpeeds(msg->twist.linear.x, msg[01;31m[K->[m[Ktwist.linear.y, msg->twist.angular.z);
+[5.031s]       |                                                 [01;31m[K^~[m[K
+[5.031s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:47:70:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[5.031s]    47 |   cobotDrive->setSpeeds(msg->twist.linear.x, msg->twist.linear.y, msg[01;31m[K->[m[Ktwist.angular.z);
+[5.032s]       |                                                                      [01;31m[K^~[m[K
+[5.032s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:[m[K At global scope:
+[5.032s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:50:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ does not name a type
+[5.032s]    50 | void timerEvent( const [01;31m[Kros[m[K::TimerEvent& ) {
+[5.032s]       |                        [01;31m[K^~~[m[K
+[5.032s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:50:39:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+[5.032s]    50 | void timerEvent( const ros::TimerEvent[01;31m[K&[m[K ) {
+[5.032s]       |                                       [01;31m[K^[m[K
+[5.033s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:50:39:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+[5.033s]    50 | void timerEvent[34m[K([m[K const ros::TimerEvent[01;31m[K&[m[K ) {
+[5.033s]       |                [34m[K~[m[K                      [01;31m[K^[m[K
+[5.033s]       |                                       [32m[K)[m[K
+[5.033s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:50:41:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K)[m[K’ token
+[5.033s]    50 | void timerEvent( const ros::TimerEvent& [01;31m[K)[m[K {
+[5.033s]       |                                         [01;31m[K^[m[K
+[5.034s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[5.034s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:204:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[5.034s]   204 |   [01;31m[Kros[m[K::init(argc, argv, "Cobot2_Drive_Module");
+[5.034s]       |   [01;31m[K^~~[m[K
+[5.034s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:205:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[5.034s]   205 |   [01;31m[Kros[m[K::NodeHandle n;
+[5.034s]       |   [01;31m[K^~~[m[K
+[5.037s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:206:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kdrive_sub[m[K’ was not declared in this scope
+[5.037s]   206 |   [01;31m[Kdrive_sub[m[K = n.subscribe("Cobot/Drive", 1, cobotDriveCallback);
+[5.037s]       |   [01;31m[K^~~~~~~~~[m[K
+[5.041s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:206:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kn[m[K’ was not declared in this scope; did you mean ‘[01m[Kyn[m[K’?
+[5.041s]   206 |   drive_sub = [01;31m[Kn[m[K.subscribe("Cobot/Drive", 1, cobotDriveCallback);
+[5.042s]       |               [01;31m[K^[m[K
+[5.042s]       |               [32m[Kyn[m[K
+[5.052s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:207:3:[m[K [01;31m[Kerror: [m[K‘[01m[KcobotRawStatusPublisher[m[K’ was not declared in this scope
+[5.052s]   207 |   [01;31m[KcobotRawStatusPublisher[m[K = n.advertise<messages::CobotRawStatus>("Cobot/RawStatus",1);
+[5.052s]       |   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[5.052s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:207:51:[m[K [01;31m[Kerror: [m[K‘[01m[KCobotRawStatus[m[K’ is not a member of ‘[01m[Kmessages[m[K’; did you mean ‘[01m[Kmessages::msg::CobotRawStatus[m[K’?
+[5.053s]   207 |   cobotRawStatusPublisher = n.advertise<messages::[01;31m[KCobotRawStatus[m[K>("Cobot/RawStatus",1);
+[5.053s]       |                                                   [01;31m[K^~~~~~~~~~~~~~[m[K
+[5.053s] In file included from [01m[K/workspace/ros2_ws/install/messages/include/messages/messages/msg/cobot_raw_status.hpp:7[m[K,
+[5.053s]                  from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:32[m[K:
+[5.053s] [01m[K/workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__struct.hpp:293:7:[m[K [01;36m[Knote: [m[K‘[01m[Kmessages::msg::CobotRawStatus[m[K’ declared here
+[5.053s]   293 | using [01;36m[KCobotRawStatus[m[K =
+[5.053s]       |       [01;36m[K^~~~~~~~~~~~~~[m[K
+[5.054s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:207:67:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K-Wunused-value[m[K]
+[5.054s]   207 |   cobotRawStatusPublisher = n.advertise<messages::CobotRawStatus>([01;35m[K"Cobot/RawStatus"[m[K,1);
+[5.054s]       |                                                                   [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[5.062s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:208:3:[m[K [01;31m[Kerror: [m[K‘[01m[KcobotOdometryPublisher[m[K’ was not declared in this scope
+[5.062s]   208 |   [01;31m[KcobotOdometryPublisher[m[K = n.advertise<nav_msgs::Odometry>("Cobot/DriveRaw",1);
+[5.062s]       |   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[5.063s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:208:50:[m[K [01;31m[Kerror: [m[K‘[01m[KOdometry[m[K’ is not a member of ‘[01m[Knav_msgs[m[K’; did you mean ‘[01m[Knav_msgs::msg::Odometry[m[K’?
+[5.063s]   208 |   cobotOdometryPublisher = n.advertise<nav_msgs::[01;31m[KOdometry[m[K>("Cobot/DriveRaw",1);
+[5.063s]       |                                                  [01;31m[K^~~~~~~~[m[K
+[5.063s] In file included from [01m[K/opt/ros/iron/include/nav_msgs/nav_msgs/msg/odometry.hpp:7[m[K,
+[5.064s]                  from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:28[m[K:
+[5.064s] [01m[K/opt/ros/iron/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:172:7:[m[K [01;36m[Knote: [m[K‘[01m[Knav_msgs::msg::Odometry[m[K’ declared here
+[5.064s]   172 | using [01;36m[KOdometry[m[K =
+[5.064s]       |       [01;36m[K^~~~~~~~[m[K
+[5.064s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:208:60:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K-Wunused-value[m[K]
+[5.064s]   208 |   cobotOdometryPublisher = n.advertise<nav_msgs::Odometry>([01;35m[K"Cobot/DriveRaw"[m[K,1);
+[5.064s]       |                                                            [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[5.069s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:209:3:[m[K [01;31m[Kerror: [m[K‘[01m[KtfBroadcaster[m[K’ was not declared in this scope
+[5.069s]   209 |   [01;31m[KtfBroadcaster[m[K = new tf::TransformBroadcaster();
+[5.069s]       |   [01;31m[K^~~~~~~~~~~~~[m[K
+[5.070s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:209:23:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf[m[K’ does not name a type; did you mean ‘[01m[Ktm[m[K’?
+[5.071s]   209 |   tfBroadcaster = new [01;31m[Ktf[m[K::TransformBroadcaster();
+[5.071s]       |                       [01;31m[K^~[m[K
+[5.071s]       |                       [32m[Ktm[m[K
+[5.071s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:211:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[5.071s]   211 |   [01;31m[Kros[m[K::Timer timer = n.createTimer(ros::Duration(1.0), timerEvent);
+[5.071s]       |   [01;31m[K^~~[m[K
+[5.071s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:214:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[5.072s]   214 |   while([01;31m[Kros[m[K::ok() && run){
+[5.072s]       |         [01;31m[K^~~[m[K
+[5.072s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:215:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[5.072s]   215 |     [01;31m[Kros[m[K::spinOnce();
+[5.072s]       |     [01;31m[K^~~[m[K
+[5.072s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:216:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[5.072s]   216 |     [01;31m[Kros[m[K::Duration(0.01).sleep();  // TODO: verify this to use w the wathdogs
+[5.072s]       |     [01;31m[K^~~[m[K
+[5.596s] In file included from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:24[m[K:
+[5.596s] [01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:[m[K At global scope:
+[5.596s] [01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:47:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvector2d normalize(const vector2d&, double)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[5.596s]    47 | static vector2d [01;35m[Knormalize[m[K(const vector2d& v, double len) {
+[5.596s]       |                 [01;35m[K^~~~~~~~~[m[K
+[5.625s] gmake[2]: *** [CMakeFiles/cobot_drive_main.dir/build.make:76: CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o] Error 1
+[5.625s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/cobot_drive_main.dir/all] Error 2
+[5.626s] gmake: *** [Makefile:146: all] Error 2
+[5.629s] Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8

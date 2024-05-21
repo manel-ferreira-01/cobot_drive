@@ -1,0 +1,5 @@
+[31mCMake Error at CMakeLists.txt:28 (install):
+  install does not recognize sub-command cobot_drive_main
+
+[0m
+gmake: *** [Makefile:348: cmake_check_build_system] Error 1

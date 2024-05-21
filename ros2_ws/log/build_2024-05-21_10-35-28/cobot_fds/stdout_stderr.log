@@ -1,0 +1,24 @@
+[35m[1mConsolidate compiler generated dependencies of target cobot_drive_main[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o[0m
+In file included from [01m[K/workspace/ros2_ws/cobot_fds/include/cobot_drive_main.hpp:3[m[K,
+                 from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:22[m[K:
+[01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:47:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvector2d normalize(const vector2d&, double)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+   47 | static vector2d [01;35m[Knormalize[m[K(const vector2d& v, double len) {
+      |                 [01;35m[K^~~~~~~~~[m[K
+[ 66%] [32m[1mLinking CXX executable cobot_drive_main[0m
+/usr/bin/ld: CMakeFiles/cobot_drive_main.dir/src/drive.cpp.o: in function `CobotDrive::close()':
+drive.cpp:(.text+0x466): undefined reference to `Serial::close()'
+/usr/bin/ld: CMakeFiles/cobot_drive_main.dir/src/drive.cpp.o: in function `CobotDrive::SerialReceive()':
+drive.cpp:(.text+0x1024): undefined reference to `checkfcs(char*, int)'
+/usr/bin/ld: CMakeFiles/cobot_drive_main.dir/src/drive.cpp.o: in function `CobotDrive::makercpacket(mspcommand_t*, unsigned char*)':
+drive.cpp:(.text+0x1299): undefined reference to `addfcs(char*, int)'
+/usr/bin/ld: CMakeFiles/cobot_drive_main.dir/src/drive.cpp.o: in function `CobotDrive::SerialSend()':
+drive.cpp:(.text+0x1880): undefined reference to `Serial::write(void const*, int)'
+/usr/bin/ld: CMakeFiles/cobot_drive_main.dir/src/drive.cpp.o: in function `CobotDrive::init(char const*)':
+drive.cpp:(.text+0x1948): undefined reference to `Serial::open(char const*, int, int, bool)'
+/usr/bin/ld: CMakeFiles/cobot_drive_main.dir/src/drive.cpp.o: in function `Serial::~Serial()':
+drive.cpp:(.text._ZN6SerialD2Ev[_ZN6SerialD5Ev]+0x18): undefined reference to `Serial::close()'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/cobot_drive_main.dir/build.make:244: cobot_drive_main] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/cobot_drive_main.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

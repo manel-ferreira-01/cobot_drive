@@ -1,0 +1,10 @@
+[0.013s] Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+[0.082s] [ 50%] [32mBuilding CXX object CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o[0m
+[0.433s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:28:10:[m[K [01;31m[Kfatal error: [m[Knav_msgs/msg/Odometry.hpp: No such file or directory
+[0.433s]    28 | #include [01;31m[K"nav_msgs/msg/Odometry.hpp"[m[K
+[0.433s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.433s] compilation terminated.
+[0.443s] gmake[2]: *** [CMakeFiles/cobot_drive_main.dir/build.make:76: CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o] Error 1
+[0.443s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/cobot_drive_main.dir/all] Error 2
+[0.443s] gmake: *** [Makefile:146: all] Error 2
+[0.447s] Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '2': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8

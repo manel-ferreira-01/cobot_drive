@@ -1,0 +1,11 @@
+[0.017s] Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+[0.101s] [ 33%] [32mBuilding CXX object CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o[0m
+[0.589s] In file included from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:22[m[K:
+[0.589s] [01m[K/workspace/ros2_ws/cobot_fds/include/cobot_drive_main.hpp:7:10:[m[K [01;31m[Kfatal error: [m[Ktf2/quaternion.hpp: No such file or directory
+[0.590s]     7 | #include [01;31m[K"tf2/quaternion.hpp"[m[K
+[0.590s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[0.590s] compilation terminated.
+[0.597s] gmake[2]: *** [CMakeFiles/cobot_drive_main.dir/build.make:90: CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o] Error 1
+[0.598s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/cobot_drive_main.dir/all] Error 2
+[0.598s] gmake: *** [Makefile:146: all] Error 2
+[0.622s] Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8

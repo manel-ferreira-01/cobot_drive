@@ -1,0 +1,21 @@
+[0.011s] Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+[0.044s] -- Found ament_cmake: 2.0.5 (/opt/ros/iron/share/ament_cmake/cmake)
+[0.187s] -- Found rclcpp: 21.0.6 (/opt/ros/iron/share/rclcpp/cmake)
+[0.207s] -- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+[0.214s] -- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+[0.225s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.239s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.376s] -- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+[0.377s] -- Found rmw_fastrtps_cpp: 7.1.3 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+[0.490s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.638s] [31mCMake Error at /opt/ros/iron/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:77 (message):
+[0.638s]   ament_target_dependencies() the passed package name 'std_msgs' was not
+[0.639s]   found before
+[0.639s] Call Stack (most recent call first):
+[0.639s]   CMakeLists.txt:18 (ament_target_dependencies)
+[0.639s] 
+[0.640s] [0m
+[0.640s] -- Configuring incomplete, errors occurred!
+[0.640s] See also "/workspace/ros2_ws/build/cobot_fds/CMakeFiles/CMakeOutput.log".
+[0.642s] gmake: *** [Makefile:267: cmake_check_build_system] Error 1
+[0.645s] Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '2': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8

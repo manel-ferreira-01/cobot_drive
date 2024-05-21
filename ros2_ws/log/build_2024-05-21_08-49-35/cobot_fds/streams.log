@@ -1,0 +1,10 @@
+[0.014s] Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+[0.082s] [ 50%] [32mBuilding CXX object CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o[0m
+[0.402s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:27:10:[m[K [01;31m[Kfatal error: [m[Ktf2_ros/transform_broadcaster.h: No such file or directory
+[0.402s]    27 | #include [01;31m[K"tf2_ros/transform_broadcaster.h"[m[K
+[0.402s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.402s] compilation terminated.
+[0.407s] gmake[2]: *** [CMakeFiles/cobot_drive_main.dir/build.make:76: CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o] Error 1
+[0.407s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/cobot_drive_main.dir/all] Error 2
+[0.408s] gmake: *** [Makefile:146: all] Error 2
+[0.410s] Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '2': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8

@@ -1,0 +1,10 @@
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:[m[K In constructor ‘[01m[KcobotDriveMain::cobotDriveMain()[m[K’:
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:53:10:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K-Wformat-security[m[K]
+   53 |   printf([01;35m[KserialPort[m[K);
+      |          [01;35m[K^~~~~~~~~~[m[K
+In file included from [01m[K/workspace/ros2_ws/cobot_fds/include/cobot_drive_main.hpp:3[m[K,
+                 from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:22[m[K:
+[01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:[m[K At global scope:
+[01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:47:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvector2d normalize(const vector2d&, double)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+   47 | static vector2d [01;35m[Knormalize[m[K(const vector2d& v, double len) {
+      |                 [01;35m[K^~~~~~~~~[m[K

@@ -1,0 +1,22 @@
+[35m[1mConsolidate compiler generated dependencies of target cobot_drive_main[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/cobot_drive_main.dir/src/drive.cpp.o[0m
+[ 40%] [32m[1mLinking CXX executable cobot_drive_main[0m
+[100%] Built target cobot_drive_main
+-- Install configuration: ""
+-- Installing: /workspace/ros2_ws/install/cobot_fds/lib/cobot_fds/cobot_drive_main
+-- Set runtime path of "/workspace/ros2_ws/install/cobot_fds/lib/cobot_fds/cobot_drive_main" to ""
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/ament_index/resource_index/package_run_dependencies/cobot_fds
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/ament_index/resource_index/parent_prefix_path/cobot_fds
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/ament_prefix_path.sh
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/ament_prefix_path.dsv
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/path.sh
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/path.dsv
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.bash
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.sh
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.zsh
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.dsv
+-- Installing: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/package.dsv
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/ament_index/resource_index/packages/cobot_fds
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/cmake/cobot_fdsConfig.cmake
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/cmake/cobot_fdsConfig-version.cmake
+-- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/package.xml

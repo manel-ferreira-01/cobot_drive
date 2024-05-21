@@ -1,0 +1,15 @@
+[0.025s] Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+[0.083s] [35m[1mConsolidate compiler generated dependencies of target cobot_drive_main[0m
+[0.102s] [ 33%] [32mBuilding CXX object CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o[0m
+[3.511s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:58:1:[m[K [01;31m[Kerror: [m[Kinvalid use of destructor ‘[01m[K~cobotDriveMain[m[K’ as a type
+[3.511s]    58 | [01;31m[K~[m[KcobotDriveMain::cobotDriveMain() {
+[3.511s]       | [01;31m[K^[m[K
+[4.342s] In file included from [01m[K/workspace/ros2_ws/cobot_fds/include/cobot_drive_main.hpp:3[m[K,
+[4.342s]                  from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:22[m[K:
+[4.342s] [01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:47:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvector2d normalize(const vector2d&, double)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[4.342s]    47 | static vector2d [01;35m[Knormalize[m[K(const vector2d& v, double len) {
+[4.343s]       |                 [01;35m[K^~~~~~~~~[m[K
+[4.382s] gmake[2]: *** [CMakeFiles/cobot_drive_main.dir/build.make:90: CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o] Error 1
+[4.382s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/cobot_drive_main.dir/all] Error 2
+[4.383s] gmake: *** [Makefile:146: all] Error 2
+[4.387s] Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8

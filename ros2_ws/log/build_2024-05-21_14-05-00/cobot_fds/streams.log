@@ -1,0 +1,42 @@
+[0.018s] Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+[0.066s] [35m[1mConsolidate compiler generated dependencies of target cobot_drive_main[0m
+[0.096s] [ 20%] [32mBuilding CXX object CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o[0m
+[0.098s] [ 40%] [32mBuilding CXX object CMakeFiles/cobot_drive_main.dir/src/drive.cpp.o[0m
+[1.089s] [01m[K/workspace/ros2_ws/cobot_fds/src/drive.cpp:[m[K In member function ‘[01m[Kvoid CobotDrive::SerialReceive()[m[K’:
+[1.089s] [01m[K/workspace/ros2_ws/cobot_fds/src/drive.cpp:266:35:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 3 has type ‘[01m[Kclock_t[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K-Wformat=[m[K]
+[1.090s]   266 |       printf("Rcv %d bytes (dT=[01;35m[K%.3f[m[K) \n",len,[32m[Kt-tLast[m[K);
+[1.090s]       |                                [01;35m[K~~~^[m[K          [32m[K~~~~~~~[m[K
+[1.090s]       |                                   [01;35m[K|[m[K           [32m[K|[m[K
+[1.090s]       |                                   [01;35m[Kdouble[m[K      [32m[Kclock_t {aka long int}[m[K
+[1.090s]       |                                [32m[K%.3ld[m[K
+[1.090s] [01m[K/workspace/ros2_ws/cobot_fds/src/drive.cpp:245:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kt_start[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[1.091s]   245 |   const double [01;35m[Kt_start[m[K = debug_serial ? tLast : 0.0;
+[1.091s]       |                [01;35m[K^~~~~~~[m[K
+[4.876s] In file included from [01m[K/workspace/ros2_ws/cobot_fds/include/cobot_drive_main.hpp:3[m[K,
+[4.877s]                  from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:22[m[K:
+[4.877s] [01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:47:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvector2d normalize(const vector2d&, double)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[4.877s]    47 | static vector2d [01;35m[Knormalize[m[K(const vector2d& v, double len) {
+[4.877s]       |                 [01;35m[K^~~~~~~~~[m[K
+[7.907s] [ 60%] [32m[1mLinking CXX executable cobot_drive_main[0m
+[8.425s] [100%] Built target cobot_drive_main
+[8.441s] Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+[8.482s] Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /workspace/ros2_ws/build/cobot_fds
+[8.493s] -- Install configuration: ""
+[8.493s] -- Installing: /workspace/ros2_ws/install/cobot_fds/lib/cobot_fds/cobot_drive_main
+[8.498s] -- Set runtime path of "/workspace/ros2_ws/install/cobot_fds/lib/cobot_fds/cobot_drive_main" to ""
+[8.498s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/ament_index/resource_index/package_run_dependencies/cobot_fds
+[8.499s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/ament_index/resource_index/parent_prefix_path/cobot_fds
+[8.499s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/ament_prefix_path.sh
+[8.499s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/ament_prefix_path.dsv
+[8.500s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/path.sh
+[8.501s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/environment/path.dsv
+[8.502s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.bash
+[8.502s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.sh
+[8.502s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.zsh
+[8.502s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/local_setup.dsv
+[8.502s] -- Installing: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/package.dsv
+[8.503s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/ament_index/resource_index/packages/cobot_fds
+[8.503s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/cmake/cobot_fdsConfig.cmake
+[8.503s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/cmake/cobot_fdsConfig-version.cmake
+[8.503s] -- Up-to-date: /workspace/ros2_ws/install/cobot_fds/share/cobot_fds/package.xml
+[8.504s] Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /workspace/ros2_ws/build/cobot_fds

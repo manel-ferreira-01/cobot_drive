@@ -1,0 +1,26 @@
+[0.015s] Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+[0.079s] [35m[1mConsolidate compiler generated dependencies of target cobot_drive_main[0m
+[0.104s] [ 20%] [32mBuilding CXX object CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o[0m
+[3.593s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:[m[K In constructor ‘[01m[KcobotDriveMain::cobotDriveMain()[m[K’:
+[3.593s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:53:10:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K-Wformat-security[m[K]
+[3.593s]    53 |   printf([01;35m[KserialPort[m[K)
+[3.593s]       |          [01;35m[K^~~~~~~~~~[m[K
+[3.593s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:53:21:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kif[m[K’
+[3.593s]    53 |   printf(serialPort)
+[3.594s]       |                     [01;31m[K^[m[K
+[3.594s]       |                     [32m[K;[m[K
+[3.594s]    54 |   [32m[Kif[m[K(debug) printf("Using port %s\n",serialPort);
+[3.594s]       |   [32m[K~~[m[K                 
+[3.609s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:38:21:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdebug[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[3.610s]    38 |   static const bool [01;35m[Kdebug[m[K = false;
+[3.610s]       |                     [01;35m[K^~~~~[m[K
+[5.387s] In file included from [01m[K/workspace/ros2_ws/cobot_fds/include/cobot_drive_main.hpp:3[m[K,
+[5.387s]                  from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:22[m[K:
+[5.387s] [01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:[m[K At global scope:
+[5.388s] [01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:47:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvector2d normalize(const vector2d&, double)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[5.388s]    47 | static vector2d [01;35m[Knormalize[m[K(const vector2d& v, double len) {
+[5.388s]       |                 [01;35m[K^~~~~~~~~[m[K
+[5.433s] gmake[2]: *** [CMakeFiles/cobot_drive_main.dir/build.make:118: CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o] Error 1
+[5.434s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/cobot_drive_main.dir/all] Error 2
+[5.434s] gmake: *** [Makefile:146: all] Error 2
+[5.437s] Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8

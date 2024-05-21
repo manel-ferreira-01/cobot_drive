@@ -1,0 +1,119 @@
+[01m[K/workspace/ros2_ws/cobot_fds/src/drive.cpp:[m[K In member function ‘[01m[Kvoid CobotDrive::SerialReceive()[m[K’:
+[01m[K/workspace/ros2_ws/cobot_fds/src/drive.cpp:266:35:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 3 has type ‘[01m[Kclock_t[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K-Wformat=[m[K]
+  266 |       printf("Rcv %d bytes (dT=[01;35m[K%.3f[m[K) \n",len,[32m[Kt-tLast[m[K);
+      |                                [01;35m[K~~~^[m[K          [32m[K~~~~~~~[m[K
+      |                                   [01;35m[K|[m[K           [32m[K|[m[K
+      |                                   [01;35m[Kdouble[m[K      [32m[Kclock_t {aka long int}[m[K
+      |                                [32m[K%.3ld[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/drive.cpp:245:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kt_start[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  245 |   const double [01;35m[Kt_start[m[K = debug_serial ? tLast : 0.0;
+      |                [01;35m[K^~~~~~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:41:1:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf[m[K’ does not name a type; did you mean ‘[01m[Ktm[m[K’?
+   41 | [01;31m[Ktf[m[K::TransformBroadcaster *tfBroadcaster;
+      | [01;31m[K^~[m[K
+      | [32m[Ktm[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:42:1:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ does not name a type
+   42 | [01;31m[Kros[m[K::Publisher cobotRawStatusPublisher;
+      | [01;31m[K^~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:43:1:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ does not name a type
+   43 | [01;31m[Kros[m[K::Publisher cobotOdometryPublisher;
+      | [01;31m[K^~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:44:1:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ does not name a type
+   44 | [01;31m[Kros[m[K::Subscriber drive_sub;
+      | [01;31m[K^~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:46:46:[m[K [01;31m[Kerror: [m[K‘[01m[KTwistStampedPtr[m[K’ in namespace ‘[01m[Kgeometry_msgs[m[K’ does not name a type
+   46 | void cobotDriveCallback(const geometry_msgs::[01;31m[KTwistStampedPtr[m[K& msg) {
+      |                                              [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:[m[K In function ‘[01m[Kvoid cobotDriveCallback(const int&)[m[K’:
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:47:28:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   47 |   cobotDrive->setSpeeds(msg[01;31m[K->[m[Ktwist.linear.x, msg->twist.linear.y, msg->twist.angular.z);
+      |                            [01;31m[K^~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:47:49:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   47 |   cobotDrive->setSpeeds(msg->twist.linear.x, msg[01;31m[K->[m[Ktwist.linear.y, msg->twist.angular.z);
+      |                                                 [01;31m[K^~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:47:70:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   47 |   cobotDrive->setSpeeds(msg->twist.linear.x, msg->twist.linear.y, msg[01;31m[K->[m[Ktwist.angular.z);
+      |                                                                      [01;31m[K^~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:[m[K At global scope:
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:50:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ does not name a type
+   50 | void timerEvent( const [01;31m[Kros[m[K::TimerEvent& ) {
+      |                        [01;31m[K^~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:50:39:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+   50 | void timerEvent( const ros::TimerEvent[01;31m[K&[m[K ) {
+      |                                       [01;31m[K^[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:50:39:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+   50 | void timerEvent[34m[K([m[K const ros::TimerEvent[01;31m[K&[m[K ) {
+      |                [34m[K~[m[K                      [01;31m[K^[m[K
+      |                                       [32m[K)[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:50:41:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K)[m[K’ token
+   50 | void timerEvent( const ros::TimerEvent& [01;31m[K)[m[K {
+      |                                         [01;31m[K^[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:204:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  204 |   [01;31m[Kros[m[K::init(argc, argv, "Cobot2_Drive_Module");
+      |   [01;31m[K^~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:205:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  205 |   [01;31m[Kros[m[K::NodeHandle n;
+      |   [01;31m[K^~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:206:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kdrive_sub[m[K’ was not declared in this scope
+  206 |   [01;31m[Kdrive_sub[m[K = n.subscribe("Cobot/Drive", 1, cobotDriveCallback);
+      |   [01;31m[K^~~~~~~~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:206:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kn[m[K’ was not declared in this scope; did you mean ‘[01m[Kyn[m[K’?
+  206 |   drive_sub = [01;31m[Kn[m[K.subscribe("Cobot/Drive", 1, cobotDriveCallback);
+      |               [01;31m[K^[m[K
+      |               [32m[Kyn[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:207:3:[m[K [01;31m[Kerror: [m[K‘[01m[KcobotRawStatusPublisher[m[K’ was not declared in this scope
+  207 |   [01;31m[KcobotRawStatusPublisher[m[K = n.advertise<messages::CobotRawStatus>("Cobot/RawStatus",1);
+      |   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:207:51:[m[K [01;31m[Kerror: [m[K‘[01m[KCobotRawStatus[m[K’ is not a member of ‘[01m[Kmessages[m[K’; did you mean ‘[01m[Kmessages::msg::CobotRawStatus[m[K’?
+  207 |   cobotRawStatusPublisher = n.advertise<messages::[01;31m[KCobotRawStatus[m[K>("Cobot/RawStatus",1);
+      |                                                   [01;31m[K^~~~~~~~~~~~~~[m[K
+In file included from [01m[K/workspace/ros2_ws/install/messages/include/messages/messages/msg/cobot_raw_status.hpp:7[m[K,
+                 from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:32[m[K:
+[01m[K/workspace/ros2_ws/install/messages/include/messages/messages/msg/detail/cobot_raw_status__struct.hpp:293:7:[m[K [01;36m[Knote: [m[K‘[01m[Kmessages::msg::CobotRawStatus[m[K’ declared here
+  293 | using [01;36m[KCobotRawStatus[m[K =
+      |       [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:207:67:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K-Wunused-value[m[K]
+  207 |   cobotRawStatusPublisher = n.advertise<messages::CobotRawStatus>([01;35m[K"Cobot/RawStatus"[m[K,1);
+      |                                                                   [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:208:3:[m[K [01;31m[Kerror: [m[K‘[01m[KcobotOdometryPublisher[m[K’ was not declared in this scope
+  208 |   [01;31m[KcobotOdometryPublisher[m[K = n.advertise<nav_msgs::Odometry>("Cobot/DriveRaw",1);
+      |   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:208:50:[m[K [01;31m[Kerror: [m[K‘[01m[KOdometry[m[K’ is not a member of ‘[01m[Knav_msgs[m[K’; did you mean ‘[01m[Knav_msgs::msg::Odometry[m[K’?
+  208 |   cobotOdometryPublisher = n.advertise<nav_msgs::[01;31m[KOdometry[m[K>("Cobot/DriveRaw",1);
+      |                                                  [01;31m[K^~~~~~~~[m[K
+In file included from [01m[K/opt/ros/iron/include/nav_msgs/nav_msgs/msg/odometry.hpp:7[m[K,
+                 from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:28[m[K:
+[01m[K/opt/ros/iron/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:172:7:[m[K [01;36m[Knote: [m[K‘[01m[Knav_msgs::msg::Odometry[m[K’ declared here
+  172 | using [01;36m[KOdometry[m[K =
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:208:60:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K-Wunused-value[m[K]
+  208 |   cobotOdometryPublisher = n.advertise<nav_msgs::Odometry>([01;35m[K"Cobot/DriveRaw"[m[K,1);
+      |                                                            [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:209:3:[m[K [01;31m[Kerror: [m[K‘[01m[KtfBroadcaster[m[K’ was not declared in this scope
+  209 |   [01;31m[KtfBroadcaster[m[K = new tf::TransformBroadcaster();
+      |   [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:209:23:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf[m[K’ does not name a type; did you mean ‘[01m[Ktm[m[K’?
+  209 |   tfBroadcaster = new [01;31m[Ktf[m[K::TransformBroadcaster();
+      |                       [01;31m[K^~[m[K
+      |                       [32m[Ktm[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:211:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  211 |   [01;31m[Kros[m[K::Timer timer = n.createTimer(ros::Duration(1.0), timerEvent);
+      |   [01;31m[K^~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:214:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  214 |   while([01;31m[Kros[m[K::ok() && run){
+      |         [01;31m[K^~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:215:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  215 |     [01;31m[Kros[m[K::spinOnce();
+      |     [01;31m[K^~~[m[K
+[01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:216:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  216 |     [01;31m[Kros[m[K::Duration(0.01).sleep();  // TODO: verify this to use w the wathdogs
+      |     [01;31m[K^~~[m[K
+In file included from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:24[m[K:
+[01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:[m[K At global scope:
+[01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:47:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvector2d normalize(const vector2d&, double)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+   47 | static vector2d [01;35m[Knormalize[m[K(const vector2d& v, double len) {
+      |                 [01;35m[K^~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/cobot_drive_main.dir/build.make:90: CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/cobot_drive_main.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

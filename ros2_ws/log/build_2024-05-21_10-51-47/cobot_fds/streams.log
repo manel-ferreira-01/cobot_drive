@@ -1,0 +1,29 @@
+[0.019s] Invoking command in '/workspace/ros2_ws/build/cobot_fds': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
+[0.076s] [35m[1mConsolidate compiler generated dependencies of target cobot_drive_main[0m
+[0.115s] [ 20%] [32mBuilding CXX object CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o[0m
+[3.880s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:[m[K In constructor ‘[01m[KcobotDriveMain::cobotDriveMain()[m[K’:
+[3.880s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:63:34:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KcobotDriveMain::create_wall_timer(int, std::_Bind_helper<false, void (cobotDriveMain::*)(), cobotDriveMain*>::type)[m[K’
+[3.880s]    63 |   timer = [01;31m[Kthis->create_wall_timer(1, std::bind(&cobotDriveMain::timerEvent, this))[m[K;
+[3.880s]       |           [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.880s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[3.881s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[3.881s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[3.881s]                  from [01m[K/workspace/ros2_ws/cobot_fds/include/cobot_drive_main.hpp:6[m[K,
+[3.881s]                  from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:22[m[K:
+[3.881s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/node.hpp:239:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class DurationRepT, class DurationT, class CallbackT> typename rclcpp::WallTimer<CallbackT>::SharedPtr rclcpp::Node::create_wall_timer(std::chrono::duration<_Rep1, _Period1>, CallbackT, rclcpp::CallbackGroup::SharedPtr)[m[K’
+[3.881s]   239 |   [01;36m[Kcreate_wall_timer[m[K(
+[3.882s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[3.882s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/node.hpp:239:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.882s] [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:63:34:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::chrono::duration<_Rep1, _Period1>[m[K’ and ‘[01m[Kint[m[K’
+[3.882s]    63 |   timer = [01;36m[Kthis->create_wall_timer(1, std::bind(&cobotDriveMain::timerEvent, this))[m[K;
+[3.882s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[5.774s] In file included from [01m[K/workspace/ros2_ws/cobot_fds/include/cobot_drive_main.hpp:3[m[K,
+[5.774s]                  from [01m[K/workspace/ros2_ws/cobot_fds/src/cobot_drive_main.cpp:22[m[K:
+[5.774s] [01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:[m[K At global scope:
+[5.774s] [01m[K/workspace/ros2_ws/cobot_fds/include/drive.h:47:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvector2d normalize(const vector2d&, double)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[5.774s]    47 | static vector2d [01;35m[Knormalize[m[K(const vector2d& v, double len) {
+[5.774s]       |                 [01;35m[K^~~~~~~~~[m[K
+[5.823s] gmake[2]: *** [CMakeFiles/cobot_drive_main.dir/build.make:118: CMakeFiles/cobot_drive_main.dir/src/cobot_drive_main.cpp.o] Error 1
+[5.824s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/cobot_drive_main.dir/all] Error 2
+[5.824s] gmake: *** [Makefile:146: all] Error 2
+[5.827s] Invoked command in '/workspace/ros2_ws/build/cobot_fds' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /workspace/ros2_ws/build/cobot_fds -- -j8 -l8
