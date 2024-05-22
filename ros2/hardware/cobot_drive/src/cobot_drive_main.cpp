@@ -151,6 +151,7 @@ void cobotDriveMain::timerEvent() {
       std::cout << ("Odometry out of bounds! Dropping odometry packet.") << std::endl;
     }else{
       cobotRawStatusPublisher->publish(cobotRawStatusMsg);
+      cobotOdometryPublisher->publish(odometryMsg);
 
 
       tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
