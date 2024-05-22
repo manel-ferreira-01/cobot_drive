@@ -13,7 +13,8 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='cobot_drive',
             executable='cobot_drive_main',
-            name='cobot_drive'
+            name='cobot_drive',
+            respawn=True
         ),
         launch_ros.actions.Node(
             package='urg_node',

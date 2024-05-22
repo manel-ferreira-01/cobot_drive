@@ -27,18 +27,18 @@
 
 using namespace std::chrono_literals;
 
-bool run = true;
-
-
 cobotDriveMain::cobotDriveMain() : Node("cobot_drive") {
 
 
-  printf("got to the constructor\n");
+
+  this->declare_parameter("my_parameter", "world");
+
 
   static const bool debug = false;
 
-  int portNum = 1;
 
+  // TODO: Get the port number from the parameter server
+  int portNum = 1;
   motor_properties_t motorProps;
   motorProps.xyFlipped = true;
   motorProps.encoderCountsPerMeter = vector2d(-1.0,1.0)*30466.8;
@@ -52,11 +52,12 @@ cobotDriveMain::cobotDriveMain() : Node("cobot_drive") {
   sprintf(serialPort,"/dev/ttyUSB%d",portNum);
   if(debug) printf("Using port %s\n",serialPort);
 
+  //TODO: Get the limits from the parameter server
   AccelLimits transLimits, rotLimits;
   transLimits.set(1.0,2.0,2.5);
   rotLimits.set(1.0*M_PI,1.0*M_PI,1.5*M_PI);
   cobotDrive->setLimits(transLimits, rotLimits);
-  cobotDrive->init(serialPort);
+  //cobotDrive->init(serialPort);
 
 
   cobotRawStatusPublisher = this->create_publisher<messages::msg::CobotRawStatus>("/cobot/raw_status", 10);
@@ -67,7 +68,6 @@ cobotDriveMain::cobotDriveMain() : Node("cobot_drive") {
 
   timer_ = this->create_wall_timer(50ms, std::bind(&cobotDriveMain::timerEvent, this));
 
-  printf("got to the end of the constructor\n");
 }
 
 cobotDriveMain::~cobotDriveMain() {

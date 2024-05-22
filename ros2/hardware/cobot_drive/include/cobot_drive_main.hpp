@@ -14,6 +14,8 @@
 #include "geometry_msgs/msg/transform_stamped.hpp"
 
 
+#define RAD(deg) ((deg) * M_PI / 180.0)
+
 class cobotDriveMain : public rclcpp::Node
 {
 private:
