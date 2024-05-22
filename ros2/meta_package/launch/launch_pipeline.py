@@ -3,6 +3,7 @@ import os
 
 import launch_ros.actions
 from launch_xml.launch_description_sources import XMLLaunchDescriptionSource
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_prefix, get_package_share_directory
 
 def generate_launch_description():
@@ -27,7 +28,11 @@ def generate_launch_description():
         XMLLaunchDescriptionSource(
                 [os.path.join(
          get_package_share_directory('rosbridge_server'), 'launch'),
-         '/rosbridge_websocket_launch.xml']))
+         '/rosbridge_websocket_launch.xml'])),
+        
+        launch.actions.IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(get_package_share_directory('meta_package')+'/launch/static_tfs.py')),
+        
     ])
 
 if __name__ == '__main__':
