@@ -57,7 +57,7 @@ cobotDriveMain::cobotDriveMain() : Node("cobot_drive") {
   transLimits.set(1.0,2.0,2.5);
   rotLimits.set(1.0*M_PI,1.0*M_PI,1.5*M_PI);
   cobotDrive->setLimits(transLimits, rotLimits);
-  //cobotDrive->init(serialPort);
+  cobotDrive->init(serialPort);
 
 
   cobotRawStatusPublisher = this->create_publisher<messages::msg::CobotRawStatus>("/cobot/raw_status", 10);
