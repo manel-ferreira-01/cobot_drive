@@ -147,7 +147,7 @@ def main():
     node = rclpy.create_node('teleop_twist_keyboard')
 
     # parameters
-    stamped = node.declare_parameter('stamped', False).value
+    stamped = True
     frame_id = node.declare_parameter('frame_id', '').value
     if not stamped and frame_id:
         raise Exception("'frame_id' can only be set when 'stamped' is True")
@@ -157,7 +157,7 @@ def main():
     else:
         TwistMsg = geometry_msgs.msg.Twist
 
-    pub = node.create_publisher(TwistMsg, 'cmd_vel', 10)
+    pub = node.create_publisher(TwistMsg, '/cobot/drive', 10)
     
     rate = 20  # publishing rate in Hz
     lock = threading.Lock()
@@ -171,7 +171,7 @@ def main():
     pub_thread.start()
 
 
-    speed = 0.5
+    speed = 0.1
     turn = 1.0
     x = 0.0
     y = 0.0

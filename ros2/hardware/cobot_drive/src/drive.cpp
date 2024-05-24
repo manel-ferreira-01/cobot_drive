@@ -98,7 +98,7 @@ void CobotDrive::setSpeeds(float x, float y, float r) {
     //TerminalWarning(text);
     x = y = r = 0;
   }
-  lastCommandT = clock();
+  lastCommandT = timeNow();
   desiredTransSpeed << x, y;
   desiredRotSpeed = r;
 }
@@ -323,7 +323,7 @@ int CobotDrive::makercpacket(mspcommand_t* command, unsigned char* buf) {
 }
 
 void CobotDrive::SerialSend() {
-  static const bool debug = false;
+  static const bool debug = true;
   static const double CommandTimeout = 0.2;
   double t = timeNow();
   mspcommand_t mspcommand;

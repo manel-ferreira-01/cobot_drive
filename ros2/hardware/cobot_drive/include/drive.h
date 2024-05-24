@@ -132,7 +132,7 @@ protected:
   double v0, v1, v2, v3;
   double currentRSpeed, currentXSpeed, currentYSpeed;
   bool newOdometryAvailable;
-  std::clock_t lastCommandT;
+  double lastCommandT;
   unsigned char status;
   double adc;
   motor_properties_t motorProps;
