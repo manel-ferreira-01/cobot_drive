@@ -10,4 +10,10 @@ def generate_launch_description():
             name='static_tf2_broadcaster',
             arguments=['0', '0', '0', '0', '0', '0','1', 'base_footprint', 'laser']
         ),
+        Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            name='static_tf2_broadcaster',
+            arguments=['0', '0', '0', '0', '0', '0','1', 'base_footprint', 'base_link']
+        ),
     ])

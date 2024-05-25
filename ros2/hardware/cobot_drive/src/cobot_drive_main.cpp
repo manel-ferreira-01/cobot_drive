@@ -159,7 +159,7 @@ void cobotDriveMain::timerEvent() {
       geometry_msgs::msg::TransformStamped t;
       t.header.stamp = this->get_clock()->now();
       t.header.frame_id = "odom";
-      t.child_frame_id = "base_footprint";
+      t.child_frame_id = "base_link"; // https://ros.org/reps/rep-0105.html
 
       t.transform.translation.x = curLoc[0];
       t.transform.translation.y = curLoc[1];
