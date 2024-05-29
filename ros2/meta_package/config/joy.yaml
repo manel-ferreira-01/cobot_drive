@@ -4,17 +4,16 @@ teleop_twist_joy_node:
       x: 1
       y: 0
     scale_linear:
-      x: 0.2
-      y: 0.2
+      x: 0.4
+      y: 0.4
 
     axis_angular:  # Left thumbstick horizontal
       yaw: 3
     scale_angular:
-      yaw: 0.4
+      yaw: 0.8
 
     publish_stamped_twist: True
     require_enable_button: False
-
 
 # docs:
 # https://index.ros.org/p/teleop_twist_joy/github-ros2-teleop_twist_joy/#humble

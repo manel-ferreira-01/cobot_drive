@@ -27,12 +27,4 @@ def generate_launch_description():
                 slam_cfg
             ]
         ),
-        Node(
-            package='nav2_bringup',
-            executable='bringup_launch.py',
-            output='screen',
-            parameters=[
-                {'use_sim_time': use_sim_time}
-            ]
-        ),
     ])
