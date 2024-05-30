@@ -20,7 +20,7 @@ def generate_launch_description():
         launch.actions.IncludeLaunchDescription(
             PythonLaunchDescriptionSource(get_package_share_directory('teleop_twist_joy')+'/launch/teleop-launch.py'),
             launch_arguments = {
-                'config_filepath': "/workspace/ros2/meta_package/config/joy.yaml"
+                'config_filepath':  os.path.join(workspace_directory,"ros2", "meta_package","config","joy.yaml") 
                 }.items()
             )
     ])
@@ -37,7 +37,7 @@ def generate_launch_description():
             executable='urg_node_driver',
             name='urg_node',
             output='screen',
-            parameters=[ os.path.join(workspace_directory, "meta_package","config","params_urg.yaml") ]
+            parameters=[ os.path.join(workspace_directory,"ros2", "meta_package","config","params_urg.yaml") ]
         ),
         launch.actions.IncludeLaunchDescription(
         XMLLaunchDescriptionSource(
@@ -57,5 +57,5 @@ def generate_launch_description():
 
 if __name__ == '__main__':
     #workspace_directory = os.getenv('ROS_WORKSPACE', os.getcwd()) 
-    #print(os.path.join(workspace_directory, "meta_package","config","params_urg.yaml"))
+    #print(os.path.join(workspace_directory,"ros2", "meta_package","config","params_urg.yaml"))
     generate_launch_description()
