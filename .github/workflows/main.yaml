@@ -4,25 +4,22 @@ on:
   push:
     branches:
       - main
-      - feat/github-workflow
+      - fix/ci/ros2
   pull_request:
     branches:
       - main
-      - feat/github-workflow
 
 jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ros:noetic-ros-core
+      image: ros:iron-ros-base
     steps:
       - uses: actions/checkout@v2
       - name: build
         shell: bash
         run: |
-          source /opt/ros/noetic/setup.bash
-          apt-get update
-          apt-get install -y python3-catkin-tools build-essential libeigen3-dev ros-noetic-tf2*
+          source /opt/ros/iron/setup.bash
           cd $GITHUB_WORKSPACE
           ls
-          catkin build
+          colcon build
