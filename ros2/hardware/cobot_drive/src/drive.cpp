@@ -27,6 +27,8 @@
 
 using std::isfinite;
 
+using namespace std::chrono;
+
 #define RAD(deg) ((deg) * M_PI / 180.0)
 
 
@@ -96,7 +98,7 @@ void CobotDrive::setSpeeds(float x, float y, float r) {
     //TerminalWarning(text);
     x = y = r = 0;
   }
-  lastCommandT = clock();
+  lastCommandT = timeNow();
   desiredTransSpeed << x, y;
   desiredRotSpeed = r;
 }
@@ -127,6 +129,15 @@ double IntDiff(uint32_t _a, uint32_t _b) {
   return diff;
 }
 
+
+double CobotDrive::timeNow(){
+  auto current_time = system_clock::now();
+  auto duration_in_seconds = duration<double>(current_time.time_since_epoch());
+  return duration_in_seconds.count();
+}
+
+
+
 void CobotDrive::EncoderUpdate(
     uint32_t e0, uint32_t e1, uint32_t e2, uint32_t e3, double t) {
   static const bool debug = false;
@@ -138,7 +149,8 @@ void CobotDrive::EncoderUpdate(
   //printf("EncoderUpdate");
 
   //Override t, use current time instead
-  t = clock();
+  t = timeNow();
+
 
   if (tlast<DBL_MIN) {
     //This is the first time the function is being called, can't estimate velocities right now
@@ -170,15 +182,15 @@ void CobotDrive::EncoderUpdate(
   odometryX = x;
   odometryY = y;
 
+  printf("odomR: %f \n", odometryR);
+
   Eigen::Rotation2D<double> rot(curAngle);
   vector2d translation; 
   translation << x,y;
   curLoc += rot*translation;
-  curAngle = M_2_PI * std::floor((curAngle+odometryR) / M_2_PI);
-  
-  //curLoc += vector2d(x,y).rotate(curAngle);
-  //curAngle = angle_mod(curAngle+odometryR);
 
+  curAngle = wrapAngle(curAngle + odometryR);
+  
   v0 = (double) e0diff/tdiff;
   v1 = (double) e1diff/tdiff;
   v2 = (double) e2diff/tdiff;
@@ -239,7 +251,7 @@ void CobotDrive::SerialReceive() {
   static const bool debug = false;
   static const bool debug_serial = false;
   static const int bufferSize = ReceiveBufferSize;
-  std::clock_t tLast = clock();
+  double tLast = timeNow();
   unsigned char buffer[bufferSize+1];
   int i=0;
   const double t_start = debug_serial ? tLast : 0.0;
@@ -261,7 +273,7 @@ void CobotDrive::SerialReceive() {
     //serial data received!
     //Ensure that the string terminates well
     buffer[std::min(bufferSize,len+1)]=0;
-    std::clock_t t = clock();
+    double t = timeNow();
     if (debug) {
       printf("Rcv %d bytes (dT=%.3f) \n",len,t-tLast);
       tLast = t;
@@ -311,9 +323,9 @@ int CobotDrive::makercpacket(mspcommand_t* command, unsigned char* buf) {
 }
 
 void CobotDrive::SerialSend() {
-  static const bool debug = false;
+  static const bool debug = true;
   static const double CommandTimeout = 0.2;
-  std::clock_t t = clock();
+  double t = timeNow();
   mspcommand_t mspcommand;
 
   if ( t - lastCommandT > CommandTimeout) {
@@ -370,7 +382,7 @@ void CobotDrive::SerialSend() {
 
   lastRotSpeed = rotSpeed;
   lastTransSpeed = transSpeed;
-  lastSerialSendT = clock();
+  lastSerialSendT = timeNow();
 
 }
 
@@ -382,5 +394,7 @@ void CobotDrive::run() {
 }
 
 void CobotDrive::init(const char *serialPort) {
+  //printf("try to open\n");
   if(robotSerial.open(serialPort,115200)==false) exit(0);
+  //printf("opened");
 }

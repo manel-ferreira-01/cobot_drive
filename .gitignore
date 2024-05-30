@@ -53,3 +53,13 @@ CATKIN_IGNORE
 
 # vscode ws files
 .vscode/
+
+build/
+install/
+log/
+
+ros2/install
+ros2/build
+ros2/log
+
+rosbag2*

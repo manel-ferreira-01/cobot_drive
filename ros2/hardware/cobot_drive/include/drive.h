@@ -42,6 +42,17 @@ typedef struct
   signed short rspeed;
 } mspcommand_t;
 
+static double wrapAngle(double angle) {
+    // Use the fmod function to get the remainder of angle divided by 2*pi
+    angle = fmod(angle + M_PI, 2 * M_PI);
+    
+    // Adjust the result to be within the range [-pi, pi]
+    if (angle < 0) {
+        angle += 2 * M_PI;
+    }
+    
+    return angle - M_PI;
+}
 typedef Eigen::Vector2d vector2d;
 
 static vector2d normalize(const vector2d& v, double len) {
@@ -110,7 +121,7 @@ protected:
   //unsigned char receiveBuffer[ReceiveBufferSize];
   uint64_t tStamp;
   AccelLimits transLimits, rotLimits;
-  std::clock_t lastSerialSendT;
+  double lastSerialSendT;
   vector2d lastTransSpeed, desiredTransSpeed;
   double curAngle;
   vector2d curLoc;
@@ -121,7 +132,7 @@ protected:
   double v0, v1, v2, v3;
   double currentRSpeed, currentXSpeed, currentYSpeed;
   bool newOdometryAvailable;
-  std::clock_t lastCommandT;
+  double lastCommandT;
   unsigned char status;
   double adc;
   motor_properties_t motorProps;
@@ -144,6 +155,7 @@ public:
                    double &vr, double &vx, double &vy,
                    double& _adc, unsigned char& _status, vector2d &curLoc, double &curAngle);
   void GetDriveRawFeedback(double& vx, double& vy, double& vr);
+  double timeNow();
 };
 
 #endif //COBOT_DRIVE
