@@ -63,7 +63,7 @@ cobotDriveMain::cobotDriveMain() : Node("cobot_drive") {
   cobotRawStatusPublisher = this->create_publisher<messages::msg::CobotRawStatus>("/cobot/raw_status", 10);
   cobotOdometryPublisher = this->create_publisher<nav_msgs::msg::Odometry>("/cobot/odometry", 10);
 
-  drive_sub = this->create_subscription<geometry_msgs::msg::TwistStamped>("/cobot/drive", 10,
+  drive_sub = this->create_subscription<geometry_msgs::msg::Twist>("/cmd_vel", 10,
    std::bind(&cobotDriveMain::cobotDriveCallback, this, std::placeholders::_1));
 
   timer_ = this->create_wall_timer(50ms, std::bind(&cobotDriveMain::timerEvent, this));
@@ -75,8 +75,8 @@ cobotDriveMain::~cobotDriveMain() {
   delete cobotDrive;
 }
 
-void cobotDriveMain::cobotDriveCallback(const geometry_msgs::msg::TwistStamped::SharedPtr msg) {
-  cobotDrive->setSpeeds(msg->twist.linear.x, msg->twist.linear.y, msg->twist.angular.z);
+void cobotDriveMain::cobotDriveCallback(const geometry_msgs::msg::Twist::SharedPtr msg) {
+  cobotDrive->setSpeeds(msg->linear.x, msg->linear.y, msg->angular.z);
 }
 
 

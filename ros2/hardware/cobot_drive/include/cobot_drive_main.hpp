@@ -10,6 +10,7 @@
 
 #include "std_msgs/msg/int32.hpp"
 #include "geometry_msgs/msg/twist_stamped.hpp"
+#include "geometry_msgs/msg/twist.hpp"
 #include "messages/msg/cobot_raw_status.hpp"
 #include "geometry_msgs/msg/transform_stamped.hpp"
 
@@ -24,7 +25,7 @@ private:
     rclcpp::Publisher<messages::msg::CobotRawStatus>::SharedPtr cobotRawStatusPublisher;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr cobotOdometryPublisher;
 
-    rclcpp::Subscription<geometry_msgs::msg::TwistStamped>::SharedPtr drive_sub;
+    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr drive_sub;
 
     rclcpp::TimerBase::SharedPtr timer_;
 
@@ -33,7 +34,7 @@ private:
     CobotDrive* cobotDrive;
 
     //methods
-    void cobotDriveCallback(const geometry_msgs::msg::TwistStamped::SharedPtr msg);
+    void cobotDriveCallback(const geometry_msgs::msg::Twist::SharedPtr msg);
     void timerEvent();
 
 
