@@ -8,7 +8,6 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(urg_node REQUIRED)
 
 
 # Install launch files.
