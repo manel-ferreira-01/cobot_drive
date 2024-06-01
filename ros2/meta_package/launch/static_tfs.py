@@ -8,6 +8,6 @@ def generate_launch_description():
             package='tf2_ros',
             executable='static_transform_publisher',
             name='static_tf2_broadcaster',
-            arguments=['0', '0', '0', '0', '0', '0','1', 'base_link', 'laser']
+            arguments=['0.25', '0', '0', '0', '0', '0','1', 'base_link', 'laser']
         ),
     ])

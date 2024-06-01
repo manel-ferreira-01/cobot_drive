@@ -54,8 +54,8 @@ cobotDriveMain::cobotDriveMain() : Node("cobot_drive") {
 
   //TODO: Get the limits from the parameter server
   AccelLimits transLimits, rotLimits;
-  transLimits.set(1.0,2.0,2.5);
-  rotLimits.set(1.0*M_PI,1.0*M_PI,1.5*M_PI);
+  transLimits.set(0.2,2.0,0.3);
+  rotLimits.set(1.0*M_PI,1.0*M_PI,0.6*M_PI);
   cobotDrive->setLimits(transLimits, rotLimits);
   cobotDrive->init(serialPort);
 

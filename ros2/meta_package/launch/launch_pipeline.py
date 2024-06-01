@@ -9,8 +9,8 @@ from ament_index_python.packages import get_package_prefix, get_package_share_di
 def generate_launch_description():
     
     workspace_directory = os.getenv('ROS_WORKSPACE', os.getcwd())  
-    teleop_flag = True 
-    
+    teleop_flag = False 
+        
     teleop_joy_pkgs = launch.LaunchDescription([
         launch_ros.actions.Node(
             package='joy_linux',
@@ -21,8 +21,9 @@ def generate_launch_description():
             PythonLaunchDescriptionSource(get_package_share_directory('teleop_twist_joy')+'/launch/teleop-launch.py'),
             launch_arguments = {
                 'config_filepath':  os.path.join(workspace_directory,"ros2", "meta_package","config","joy.yaml") 
-                }.items()
-            )
+            }.items()
+        )
+        
     ])
     
     launch_list = launch.LaunchDescription([
@@ -57,5 +58,5 @@ def generate_launch_description():
 
 if __name__ == '__main__':
     #workspace_directory = os.getenv('ROS_WORKSPACE', os.getcwd()) 
-    #print(os.path.join(workspace_directory,"ros2", "meta_package","config","params_urg.yaml"))
+    #print(os.path.join(workspace_directory,"ros2", "meta_package","config","joy.yaml") )
     generate_launch_description()
