@@ -1,0 +1,13 @@
+my_node:
+  ros__parameters:
+    port_num_drive: 1
+    translation_limits:
+      max_accel: 0.2
+      max_deccel: 2.0
+      max_vel: 0.3
+
+    rotation_limits:
+      max_accel: 3.1415
+      max_deccel: 3.1415
+      max_vel: 1.0
+      

@@ -31,7 +31,8 @@ def generate_launch_description():
             package='cobot_drive',
             executable='cobot_drive_main',
             name='cobot_drive',
-            respawn=True
+            respawn=True,
+            paramteters=[ os.path.join(workspace_directory,"ros2", "cobot_drive","config","drive.yaml") ]
         ),
         launch_ros.actions.Node(
             package='urg_node',

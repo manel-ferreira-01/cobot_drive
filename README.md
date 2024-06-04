@@ -16,20 +16,20 @@ To install dependecies and setup a ROS2 Enviroment:
 
 Add this aliases to ~/.bashrc of host machine:
 ``` bash
-    alias pipeCreate="xhost +local:* && docker run --name isr-cobot-cont \
-    -it --network=host \
-    -e DISPLAY=$DISPLAY \
-    -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-    --volume="/home/$USER/ist/smart_retail/cobot_drive":"/workspace":rw \
-    --device=/dev/ttyUSB1:/dev/ttyUSB1 \
-    --device=/dev/ttyUSB0:/dev/ttyUSB0 \
-    --device=/dev/ttyACM0:/dev/ttyACM0 \
-    isr-cobot \
-    bash" # change repo's path accordingly
+alias pipeCreate="xhost +local:* && docker run --name isr-cobot-cont \
+-it --network=host \
+-e DISPLAY=$DISPLAY \
+-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+--volume="/home/$USER/ist/smart_retail/cobot_drive":"/workspace":rw \
+--device=/dev/ttyUSB1:/dev/ttyUSB1 \
+--device=/dev/ttyUSB0:/dev/ttyUSB0 \
+--device=/dev/ttyACM0:/dev/ttyACM0 \
+isr-cobot \
+bash" # change repo's path accordingly
 
-    alias pipeDelete="docker rm isr-cobot-cont"
-    alias pipeNew="xhost +local:* && docker exec -it isr-cobot-cont bash"
-    alias pipeRestart="xhost +local:* && docker start -i isr-cobot-cont"
+alias pipeDelete="docker rm isr-cobot-cont"
+alias pipeNew="xhost +local:* && docker exec -it isr-cobot-cont bash"
+alias pipeRestart="xhost +local:* && docker start -i isr-cobot-cont"
 
 ```
 

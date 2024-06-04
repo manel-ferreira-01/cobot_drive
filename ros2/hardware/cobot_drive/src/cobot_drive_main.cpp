@@ -29,16 +29,11 @@ using namespace std::chrono_literals;
 
 cobotDriveMain::cobotDriveMain() : Node("cobot_drive") {
 
-
-
-  this->declare_parameter("my_parameter", "world");
-
-
   static const bool debug = false;
 
+  int portNum = this->get_parameter("port_num_drive").as_int();
 
-  // TODO: Get the port number from the parameter server
-  int portNum = 1;
+  // Sacred data from CMU code - do not change
   motor_properties_t motorProps;
   motorProps.xyFlipped = true;
   motorProps.encoderCountsPerMeter = vector2d(-1.0,1.0)*30466.8;
@@ -50,15 +45,23 @@ cobotDriveMain::cobotDriveMain() : Node("cobot_drive") {
 
   char serialPort[256];
   sprintf(serialPort,"/dev/ttyUSB%d",portNum);
-  if(debug) printf("Using port %s\n",serialPort);
+  printf("Using port %s\n",serialPort);
 
   //TODO: Get the limits from the parameter server
   AccelLimits transLimits, rotLimits;
-  transLimits.set(0.2,2.0,0.3);
-  rotLimits.set(1.0*M_PI,1.0*M_PI,0.6*M_PI);
+
+  transLimits.set(this->get_parameter("translation_limits.max_accel").as_double(),
+    this->get_parameter("translation_limits.max_deccel").as_double(),
+    this->get_parameter("translation_limits.max_vel").as_double()
+  );
+
+  rotLimits.set(this->get_parameter("rotation_limits.max_accel").as_double(), 
+    this->get_parameter("rotation_limits.max_deccel").as_double(),
+    this->get_parameter("rotation_limits.max_vel").as_double()
+  );
+
   cobotDrive->setLimits(transLimits, rotLimits);
   cobotDrive->init(serialPort);
-
 
   cobotRawStatusPublisher = this->create_publisher<messages::msg::CobotRawStatus>("/cobot/raw_status", 10);
   cobotOdometryPublisher = this->create_publisher<nav_msgs::msg::Odometry>("/cobot/odometry", 10);

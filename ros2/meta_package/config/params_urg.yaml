@@ -1,7 +1,7 @@
 urg_node:
   ros__parameters:
     angle_min: -1.57
-    angle_max: 1.57
+    angle_max: 1.57 # TODO: check this value we can prob see more than 90 degrees
     cluster: 1
     skip: 0
     frame_id: "laser"
