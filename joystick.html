@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Robot Joystick</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; touch-action: none; user-select: none; }
+body { background: #111; color: #eee; font-family: monospace; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 12px; }
+#header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; width: 100%; max-width: 500px; }
+#ws-url { flex: 1; background: #1e1e1e; border: 1px solid #333; border-radius: 6px; color: #eee; padding: 6px 10px; font-size: 13px; font-family: monospace; }
+#conn-btn { padding: 6px 14px; border-radius: 6px; border: 1px solid #444; background: #2a2a2a; color: #ccc; font-size: 13px; cursor: pointer; }
+#conn-btn.connected { border-color: #2d7a45; background: #1a3d28; color: #4ade80; }
+#status-dot { width: 10px; height: 10px; border-radius: 50%; background: #555; flex-shrink: 0; }
+#status-dot.on { background: #4ade80; }
+#telemetry { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; width: 100%; max-width: 500px; margin-bottom: 10px; }
+.tel { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 8px 12px; }
+.tel-label { font-size: 10px; color: #555; margin-bottom: 2px; }
+.tel-val { font-size: 16px; font-weight: 500; color: #eee; }
+#joystick-area { display: flex; gap: 20px; justify-content: center; align-items: center; width: 100%; max-width: 500px; }
+.pad-wrap { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.pad-label { font-size: 10px; color: #555; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+.pad-sublabel { font-size: 10px; color: #444; text-align: center; }
+canvas { border-radius: 50%; display: block; }
+#buttons-row { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; justify-content: center; }
+.cmd-btn { padding: 8px 20px; border-radius: 8px; border: 1px solid #333; background: #1e1e1e; color: #aaa; font-size: 13px; cursor: pointer; }
+.cmd-btn.stop { border-color: #7a2d2d; background: #3d1a1a; color: #f87171; }
+#log { width: 100%; max-width: 500px; margin-top: 10px; background: #0d0d0d; border: 1px solid #222; border-radius: 8px; padding: 8px 10px; font-size: 11px; color: #555; height: 60px; overflow-y: auto; font-family: monospace; }
+</style>
+</head>
+<body>
+
+<div id="header">
+  <div id="status-dot"></div>
+  <input id="ws-url" type="text" value="ws://100.80.70.93:9091" />
+  <button id="conn-btn" onclick="toggleConnect()">Connect</button>
+</div>
+
+<div id="telemetry">
+  <div class="tel"><div class="tel-label">VX (m/s)</div><div class="tel-val" id="t-vx">0.00</div></div>
+  <div class="tel"><div class="tel-label">VY (m/s)</div><div class="tel-val" id="t-vy">0.00</div></div>
+  <div class="tel"><div class="tel-label">YAW (rad/s)</div><div class="tel-val" id="t-yaw">0.00</div></div>
+</div>
+
+<div id="joystick-area">
+  <div class="pad-wrap">
+    <canvas id="pad-left" width="170" height="170"></canvas>
+    <div class="pad-label">Move</div>
+    <div class="pad-sublabel">X/Y translation</div>
+  </div>
+  <div class="pad-wrap">
+    <canvas id="pad-right" width="170" height="170"></canvas>
+    <div class="pad-label">Rotate</div>
+    <div class="pad-sublabel">left/right = yaw</div>
+  </div>
+</div>
+
+<div id="buttons-row">
+  <button class="cmd-btn stop" onclick="sendStop()">STOP</button>
+</div>
+
+<div id="log"></div>
+
+<script>
+const MAX_VX  = 1.0;   // m/s forward/back
+const MAX_VY  = 1.0;   // m/s strafe
+const MAX_YAW = 1.5;   // rad/s rotation
+
+let ws = null, connected = false;
+let sticks = { left: {x:0,y:0}, right: {x:0,y:0} };
+let sendInterval = null;
+
+function log(msg) {
+  const el = document.getElementById('log');
+  el.innerHTML += '<div>' + msg + '</div>';
+  el.scrollTop = el.scrollHeight;
+}
+
+function toggleConnect() {
+  if (connected) { ws && ws.close(); return; }
+  const url = document.getElementById('ws-url').value.trim();
+  log('Connecting to ' + url);
+  try {
+    ws = new WebSocket(url);
+    ws.onopen = () => {
+      connected = true;
+      document.getElementById('status-dot').classList.add('on');
+      document.getElementById('conn-btn').classList.add('connected');
+      document.getElementById('conn-btn').textContent = 'Disconnect';
+      log('Connected');
+      sendInterval = setInterval(transmit, 50);
+    };
+    ws.onclose = () => {
+      connected = false;
+      document.getElementById('status-dot').classList.remove('on');
+      document.getElementById('conn-btn').classList.remove('connected');
+      document.getElementById('conn-btn').textContent = 'Connect';
+      clearInterval(sendInterval);
+      log('Disconnected');
+    };
+    ws.onerror = () => log('WebSocket error');
+    ws.onmessage = e => log('← ' + e.data);
+  } catch(err) { log('Error: ' + err.message); }
+}
+
+function transmit() {
+  if (!connected || !ws) return;
+
+  // Left stick: X = strafe (vy), Y = forward/back (vx)
+  // Right stick: X = yaw
+  const vx  = -sticks.left.y  * MAX_VX;
+  const vy  = -sticks.left.x  * MAX_VY;
+  const yaw = -sticks.right.x * MAX_YAW;
+
+  document.getElementById('t-vx').textContent  = vx.toFixed(2);
+  document.getElementById('t-vy').textContent  = vy.toFixed(2);
+  document.getElementById('t-yaw').textContent = yaw.toFixed(2);
+
+  const payload = JSON.stringify({
+    op: 'publish',
+    topic: '/cmd_vel',
+    msg: {
+      linear:  { x: +vx.toFixed(3),  y: +vy.toFixed(3),  z: 0 },
+      angular: { x: 0, y: 0, z: +yaw.toFixed(3) }
+    }
+  });
+
+  try { ws.send(payload); } catch(e) {}
+}
+
+function sendStop() {
+  sticks.left = {x:0,y:0}; sticks.right = {x:0,y:0};
+  drawPad('pad-left', 0, 0); drawPad('pad-right', 0, 0);
+  ['t-vx','t-vy','t-yaw'].forEach(id => document.getElementById(id).textContent = '0.00');
+  if (connected && ws) {
+    try {
+      ws.send(JSON.stringify({ op:'publish', topic:'/cmd_vel', msg:{
+        linear:{x:0,y:0,z:0}, angular:{x:0,y:0,z:0}
+      }}));
+    } catch(e) {}
+  }
+}
+
+function drawPad(id, nx, ny) {
+  const canvas = document.getElementById(id);
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, R = W / 2;
+  ctx.clearRect(0, 0, W, W);
+
+  ctx.beginPath(); ctx.arc(R, R, R-2, 0, Math.PI*2);
+  ctx.fillStyle = '#1a1a1a'; ctx.fill();
+  ctx.strokeStyle = '#2a2a2a'; ctx.lineWidth = 1.5; ctx.stroke();
+
+  // crosshair
+  ctx.beginPath(); ctx.moveTo(R,6); ctx.lineTo(R,W-6);
+  ctx.strokeStyle='#252525'; ctx.lineWidth=1; ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(6,R); ctx.lineTo(W-6,R); ctx.stroke();
+
+  // outer ring accent
+  ctx.beginPath(); ctx.arc(R, R, R-2, 0, Math.PI*2);
+  ctx.strokeStyle = '#333'; ctx.lineWidth = 1; ctx.stroke();
+
+  const knobR = 30, maxD = R - knobR - 4;
+  const kx = R + nx*maxD, ky = R + ny*maxD;
+
+  ctx.beginPath(); ctx.arc(kx, ky, knobR, 0, Math.PI*2);
+  ctx.fillStyle = '#1e3a6e'; ctx.fill();
+  ctx.strokeStyle = '#4a7fd4'; ctx.lineWidth = 2; ctx.stroke();
+
+  // knob center dot
+  ctx.beginPath(); ctx.arc(kx, ky, 5, 0, Math.PI*2);
+  ctx.fillStyle = '#6a9fe4'; ctx.fill();
+}
+
+function setupPad(id, side) {
+  const canvas = document.getElementById(id);
+  let active = false, tid = null;
+  const R = canvas.width / 2;
+
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const t = e.touches ? (Array.from(e.touches).find(t=>t.identifier===tid)||e.touches[0]) : e;
+    return { ox: t.clientX - rect.left - R, oy: t.clientY - rect.top - R };
+  }
+  function update(e) {
+    e.preventDefault();
+    const {ox,oy} = getPos(e);
+    const dist = Math.sqrt(ox*ox+oy*oy), maxD = R - 34;
+    const s = dist > maxD ? maxD/dist : 1;
+    const nx = ox*s/maxD, ny = oy*s/maxD;
+    sticks[side] = {x: nx, y: ny};
+    drawPad(id, nx, ny);
+  }
+  function release() {
+    if (!active) return;
+    active = false;
+    sticks[side] = {x:0, y:0};
+    drawPad(id, 0, 0);
+  }
+  canvas.addEventListener('touchstart', e=>{e.preventDefault();active=true;tid=e.changedTouches[0].identifier;update(e);},{passive:false});
+  canvas.addEventListener('touchmove',  e=>{if(active)update(e);},{passive:false});
+  canvas.addEventListener('touchend',   ()=>release(),{passive:false});
+  canvas.addEventListener('touchcancel',()=>release(),{passive:false});
+  canvas.addEventListener('mousedown',  e=>{active=true;update(e);});
+  canvas.addEventListener('mousemove',  e=>{if(active)update(e);});
+  canvas.addEventListener('mouseup',    ()=>release());
+}
+
+drawPad('pad-left',0,0); drawPad('pad-right',0,0);
+setupPad('pad-left','left'); setupPad('pad-right','right');
+</script>
+</body>
+</html>

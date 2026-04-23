@@ -31,6 +31,14 @@ cobotDriveMain::cobotDriveMain() : Node("cobot_drive") {
 
   static const bool debug = false;
 
+  this->declare_parameter("port_num_drive", 0);
+  this->declare_parameter("translation_limits.max_accel", 0.0);
+  this->declare_parameter("translation_limits.max_deccel", 0.0);
+  this->declare_parameter("translation_limits.max_vel", 0.0);
+  this->declare_parameter("rotation_limits.max_accel", 0.0);
+  this->declare_parameter("rotation_limits.max_deccel", 0.0);
+  this->declare_parameter("rotation_limits.max_vel", 0.0);
+
   int portNum = this->get_parameter("port_num_drive").as_int();
 
   // Sacred data from CMU code - do not change

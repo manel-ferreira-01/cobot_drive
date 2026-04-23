@@ -1,4 +1,4 @@
-my_node:
+cobot_drive:
   ros__parameters:
     port_num_drive: 1
     translation_limits:

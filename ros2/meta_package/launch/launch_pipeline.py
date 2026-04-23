@@ -9,21 +9,24 @@ from ament_index_python.packages import get_package_prefix, get_package_share_di
 def generate_launch_description():
     
     workspace_directory = os.getenv('ROS_WORKSPACE', os.getcwd())  
-    teleop_flag = False 
+    teleop_flag = True  # changed
         
     teleop_joy_pkgs = launch.LaunchDescription([
         launch_ros.actions.Node(
             package='joy_linux',
             executable='joy_linux_node',
-            name='joy_linux'),
+            name='joy_linux',
+            parameters=[{
+                'dev': '/dev/input/js0',
+                'autorepeat_rate': 20.0,  # publish even when idle
+            }]),
         
         launch.actions.IncludeLaunchDescription(
             PythonLaunchDescriptionSource(get_package_share_directory('teleop_twist_joy')+'/launch/teleop-launch.py'),
-            launch_arguments = {
-                'config_filepath':  os.path.join(workspace_directory,"ros2", "meta_package","config","joy.yaml") 
+            launch_arguments={
+                'config_filepath': os.path.join(workspace_directory, "ros2", "meta_package", "config", "html.yaml"),
             }.items()
         )
-        
     ])
     
     launch_list = launch.LaunchDescription([
@@ -32,7 +35,7 @@ def generate_launch_description():
             executable='cobot_drive_main',
             name='cobot_drive',
             respawn=True,
-            paramteters=[ os.path.join(workspace_directory,"ros2", "cobot_drive","config","drive.yaml") ]
+            parameters=[ os.path.join(workspace_directory,"ros2", "hardware", "cobot_drive","config","drive.yaml") ]
         ),
         launch_ros.actions.Node(
             package='urg_node',
@@ -48,16 +51,13 @@ def generate_launch_description():
         
         launch.actions.IncludeLaunchDescription(
         PythonLaunchDescriptionSource(get_package_share_directory('meta_package')+'/launch/static_tfs.py')),
-        ]
-    )
+    ])
     
-    if teleop_flag : 
+    if teleop_flag:
         secondary_actions = teleop_joy_pkgs.entities
         launch_list.entities.extend(secondary_actions)
                 
     return launch_list
 
 if __name__ == '__main__':
-    #workspace_directory = os.getenv('ROS_WORKSPACE', os.getcwd()) 
-    #print(os.path.join(workspace_directory,"ros2", "meta_package","config","joy.yaml") )
     generate_launch_description()
